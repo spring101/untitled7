@@ -5,5 +5,5 @@ body{
 div.col{
     border: solid 1px #aa9974;
     background-color: #b5cbcc;
-    float: left;
+    width: 520px;
 }

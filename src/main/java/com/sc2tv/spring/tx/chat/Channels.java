@@ -1,5 +1,6 @@
-package com.sc2tv.spring.tx;
+package com.sc2tv.spring.tx.chat;
 
+import com.sc2tv.spring.tx.WebClient;
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 import net.minidev.json.parser.JSONParser;
@@ -8,6 +9,7 @@ import net.minidev.json.parser.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -47,35 +49,13 @@ public class Channels {
         }
         return "";
     }
-
-    public class Channel{
-        private String streamerName;
-        private String channelTitle;
-        private String channelId;
-        public String getChannelId() {
-            return channelId;
-        }
-        public void setChannelId(String channelId) {
-            this.channelId = channelId;
-        }
-        public String getStreamerName() {
-            return streamerName;
-        }
-        public void setStreamerName(String streamerName) {
-            this.streamerName = streamerName;
-        }
-        public String getChannelTitle() {
-            return channelTitle;
-        }
-        public void setChannelTitle(String channelTitle) {
-            this.channelTitle = channelTitle;
-        }
-        public Channel(String streamerName, String channelTitle, String channelId) {
-            this.streamerName = streamerName;
-            this.channelTitle = channelTitle;
-            this.channelId = channelId;
-        }
+    public Map<String, List<Message>> getAllMessages(){
+        Map<String, List<Message>> toReturn = new HashMap<>();
+        for(Channel channel: channels)
+            toReturn.put(channel.getChannelId(), channel.getMessages());
+        return toReturn;
     }
+
     public Channels() {
         String resp = webClient.executeGet("http://chat.sc2tv.ru/memfs/channels.json", new HashMap<String, String>());
         JSONParser parser = new JSONParser();
@@ -94,7 +74,6 @@ public class Channels {
             String channelId = (String) ((JSONObject) object).get("channelId");
             channels.add(new Channel(streamerName, channelTitle, channelId));
         }
-       // autoRefresh();
     }
     public List<String> getAllIds(){
         List<String> toReturn = new ArrayList<>();

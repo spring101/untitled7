@@ -11,12 +11,8 @@
 
     #foreach( $channel in $channels)
         <div class="row">
-            <div class="col channel-id">$channel.channelId</div>
-            <div class="col channel-streamerName">$channel.streamerName</div>
-            <div class="col channel-title">$channel.channelTitle</div>
-            <div class='pageHolder-footer'></div>
+            <div class="col channel-id"><a href="./channel?id=$channel.channelId"><b>$channel.streamerName</b> $channel.channelTitle</a></div>
         </div>
-
     #end
     </div>
 </div>

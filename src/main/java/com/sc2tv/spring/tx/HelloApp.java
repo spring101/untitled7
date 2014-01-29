@@ -1,6 +1,7 @@
 package com.sc2tv.spring.tx;
 
 
+import com.sc2tv.spring.tx.chat.Channels;
 import com.sc2tv.spring.tx.model.ProxyUnit;
 import com.sc2tv.spring.tx.model.Sc2TvUser;
 import com.sc2tv.spring.tx.proxy.ProxyManager;
