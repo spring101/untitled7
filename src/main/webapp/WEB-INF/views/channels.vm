@@ -1,0 +1,24 @@
+<html>
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <title>Spring MVC and Velocity</title>
+    <link type="text/css" rel="stylesheet" href="/css/channels.css"/>
+</head>
+<body>
+<div class="wrapper">
+    <div class="table">
+
+    #foreach( $channel in $channels)
+        <div class="row">
+            <div class="col channel-id">$channel.channelId</div>
+            <div class="col channel-streamerName">$channel.streamerName</div>
+            <div class="col channel-title">$channel.channelTitle</div>
+            <div class='pageHolder-footer'></div>
+        </div>
+
+    #end
+    </div>
+</div>
+</body>
+</html>

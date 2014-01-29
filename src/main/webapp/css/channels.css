@@ -1,0 +1,9 @@
+body{
+    margin: 0;
+    width: 100%;
+}
+div.col{
+    border: solid 1px #aa9974;
+    background-color: #b5cbcc;
+    float: left;
+}
