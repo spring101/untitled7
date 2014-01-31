@@ -2,15 +2,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr">
 <head>
+    <link type="text/css" rel="stylesheet" media="all" href="/css/chat.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>SC2TV.RU chat</title>
-    <link type="text/css" rel="stylesheet" media="all" href="css/chat.css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/smiles.js"></script>
+    <script type="text/javascript" src="/js/bb_code.js"></script>
+    <script type="text/javascript" src="/js/ch.js"></script>
+
+
 </head>
 <body>
-    #foreach( $message in $channel.getMessages)
-    <div class="row">
-        <div class="col channel-id">[$message.getDate] $message.getName: $message.getMessage</div>
-    </div>
-    #end
+<div id="dialog2">
+    <div id="add_styles"></div>
+    <div class="chat-channel-name"></div>
+    <div id="chat"></div>
+</div>
 </body>
 </html>
+

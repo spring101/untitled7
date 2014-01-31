@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <title>Spring MVC and Velocity</title>
     <link type="text/css" rel="stylesheet" href="/css/channels.css"/>
+    <script type="text/javascript" src="/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/smiles.js?v=48"></script>
+    <script type="text/javascript" src="/js/bb_code.js?v=5"></script>
+    <script type="text/javascript" src="/js/chat.js?v=32"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -11,7 +16,7 @@
 
     #foreach( $channel in $channels)
         <div class="row">
-            <div class="col channel-id"><a href="./channel?id=$channel.channelId"><b>$channel.streamerName</b> $channel.channelTitle</a></div>
+            <div class="col channel-id"><a href="/channels/channel?id=$channel.channelId"><b>$channel.streamerName</b> $channel.channelTitle</a></div>
         </div>
     #end
     </div>

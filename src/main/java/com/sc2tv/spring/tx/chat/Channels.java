@@ -5,6 +5,7 @@ import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 import net.minidev.json.parser.JSONParser;
 import net.minidev.json.parser.ParseException;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-
+@Service
 public class Channels {
     public List<Channel> getChannels() {
         return channels;
@@ -67,9 +68,10 @@ public class Channels {
         }
         JSONObject jsonObj = (JSONObject) obj;
         JSONArray objects = (JSONArray) jsonObj.get("channel");
-        objects.remove(0);
         for(Object object: objects){
             String streamerName = (String) ((JSONObject) object).get("streamerName");
+            if(streamerName == null)
+                streamerName = "";
             String channelTitle = ((String) ((JSONObject) object).get("channelTitle"));
             String channelId = (String) ((JSONObject) object).get("channelId");
             channels.add(new Channel(streamerName, channelTitle, channelId));
@@ -94,9 +96,10 @@ public class Channels {
         }
         JSONObject jsonObj = (JSONObject) obj;
         JSONArray objects = (JSONArray) jsonObj.get("channel");
-        objects.remove(0);
         for(Object object: objects){
             String streamerName = (String) ((JSONObject) object).get("streamerName");
+            if(streamerName == null)
+                streamerName = "";
             String channelTitle = (String) ((JSONObject) object).get("channelTitle");
             String channelId = (String) ((JSONObject) object).get("channelId");
             channels.add(new Channel(streamerName, channelTitle, channelId));

@@ -56,9 +56,9 @@ public class HelloApp  {
         };
         proxyUnit.getHost();
         proxyUnit.getPort();
-        User user = new User(sc2TvUser1, new ProxyUnit(proxyUnit.getHost(),proxyUnit.getPort()));
+        //User user = new User(sc2TvUser1, new ProxyUnit(proxyUnit.getHost(),proxyUnit.getPort()));
 
-        user.sendMessage("Привет, Гарик :-)", channels.getChannelIdByStreamerName("Garklav"));
+       // user.sendMessage("Привет, Гарик :-)", channels.getChannelIdByStreamerName("Garklav"));
        // User user = new User(sc2TvUser1, new ProxyUnit(sc2TvUser1.getProxy().split(":")[0],Integer.parseInt(sc2TvUser1.getProxy().split(":")[1])));
 
         String line1;

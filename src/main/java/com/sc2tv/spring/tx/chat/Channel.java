@@ -14,12 +14,6 @@ public class Channel{
     private String streamerName;
     private String channelTitle;
     private String channelId;
-
-    public void setMessages(List<Message> messages) {
-        this.messages = messages;
-    }
-
-    private List<Message> messages;
     public Channel(String channelId){
         String resp = new WebClient().executeGet("http://chat.sc2tv.ru/memfs/channels.json", new HashMap<String, String>());
         JSONParser parser = new JSONParser();
@@ -34,12 +28,9 @@ public class Channel{
         boolean isFound = false;
         for(Object object: objects){
             if(((String)((JSONObject)object).get("channelId")).equals(channelId)){
-                try{
-                    this.streamerName = (String) ((JSONObject)object).get("streamerName");
-                }
-                catch(Exception exp){
+                this.streamerName = (String) ((JSONObject) object).get("streamerName");
+                if(this.streamerName == null)
                     this.streamerName = "";
-                }
                 this.channelTitle = (String) ((JSONObject)object).get("channelTitle");
                 this.channelId = channelId;
                 isFound = true;
@@ -92,12 +83,12 @@ public class Channel{
         JSONArray objects = (JSONArray) jsonObj.get("messages");
         for(Object object: objects){
             Message toAdd = new Message();
-            toAdd.setName((String)((JSONObject)object).get("name"));
+            toAdd.setName((String) ((JSONObject) object).get("name"));
             toAdd.setChannelId((String) ((JSONObject) object).get("channelId"));
-            toAdd.setDate((String)((JSONObject)object).get("date"));
-            toAdd.setId((String)((JSONObject)object).get("id"));
-            toAdd.setMessage((String)((JSONObject)object).get("message"));
-            toAdd.setRole((String)((JSONObject)object).get("role"));
+            toAdd.setDate((String) ((JSONObject) object).get("date"));
+            toAdd.setId((String) ((JSONObject) object).get("id"));
+            toAdd.setMessage((String) ((JSONObject) object).get("message"));
+            toAdd.setRole((String) ((JSONObject) object).get("role"));
             toAdd.setUid((String)((JSONObject)object).get("uid"));
             toReturn.add(toAdd);
         }

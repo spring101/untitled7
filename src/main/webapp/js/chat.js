@@ -287,7 +287,7 @@ function ReadChat( firstRead ) {
 		$.getJSON( CHAT_URL + 'memfs/channel-moderator.json', function( jsonData ){
 			if ( jsonData != undefined ) {
 				var messageList = [];
-				messageList = FilterMessages(jsonData.messages);
+				messageList = jsonData.messages;
 				data = BuildHtml( messageList );
 				PutDataToChat( data );
 			}

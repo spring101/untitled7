@@ -7,13 +7,10 @@ import com.sc2tv.spring.tx.WebClient;
 import com.sc2tv.spring.tx.model.ProxyUnit;
 import com.sc2tv.spring.tx.proxy.ProxyManager;
 import com.sc2tv.spring.tx.service.strawpool.Strawpool;
-import net.minidev.json.JSONArray;
-import net.minidev.json.JSONObject;
-import net.minidev.json.parser.JSONParser;
-import net.minidev.json.parser.ParseException;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.jsoup.Jsoup;
+import org.springframework.stereotype.Service;
 
 import javax.script.Bindings;
 import javax.script.ScriptContext;
@@ -28,22 +25,19 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+@Service
 public class StrawpoolImpl implements Strawpool{
     Scanner scanner;
     List<String> task;
 
     public StrawpoolImpl(String channel) {
-        scanner = new Scanner(getId(channel));
+        scanner = new Scanner();
+        task = new ArrayList<>();
+    }
+    public StrawpoolImpl() {
         task = new ArrayList<>();
     }
     ProxyManager proxyManager;
-    private WebClient webClient = new WebClient();
-    String channel;
-    public void setProxyManager(ProxyManager proxyManager)
-    {
-        this.proxyManager = proxyManager;
-    };
 
     @Override
     public void startVoteStrawpool(String url, final int[] voteFor, int threads) {
@@ -83,7 +77,7 @@ public class StrawpoolImpl implements Strawpool{
         }
     }
     @Override
-    public void startVoteRupool(final String url, final int[] voteFor, int threads) {
+    public void startVoteRupool(final String url, final int[] voteFor, int threads, final boolean money) {
         final int[] count = {0};
         int maxCount = 300;
         WebClient webClient2 = new WebClient();
@@ -122,7 +116,7 @@ public class StrawpoolImpl implements Strawpool{
                         params.put("kt", kt);
 
                         String outPut = webClient1.executeGet("http://www.rupoll.com/voteconfirm.php", params);
-                        if(outPut.contains("image")){
+                        if(outPut.contains("image")&&money){
                             params.remove("id");
                             byte[] image = webClient1.executeGetByte("http://www.rupoll.com/checkimage.php", params);
                             List<NameValuePair> pairs = new ArrayList<>();
@@ -193,15 +187,16 @@ public class StrawpoolImpl implements Strawpool{
             }
         }
     }
-    public void scanSingle(final int threads, final int[] voteFor)
+    public void scanSingle(String channel, final int threads, final int[] voteFor, final boolean money)
     {
+        final Scanner scanner1 = new Scanner(channel);
         final Pattern pattern = Pattern.compile("strawpoll.me/\\d*");
         final Pattern pattern2 = Pattern.compile("rupoll.com/\\w*.html");
         Executor executor = Executors.newSingleThreadExecutor();
         executor.execute(new Runnable() { public void run() {
             while (true){//"http://www.rupoll.com/nnhypwepsr.html"
-                Matcher matcher = pattern.matcher(scanner.getResponse().replace("\\", ""));
-                Matcher matcher2 = pattern2.matcher(scanner.getResponse().replace("\\", ""));
+                Matcher matcher = pattern.matcher(scanner1.getResponse().replace("\\", ""));
+                Matcher matcher2 = pattern2.matcher(scanner1.getResponse().replace("\\", ""));
                 boolean STR = matcher.find();
                 boolean RUP = matcher2.find();
                 while (STR||RUP)
@@ -216,7 +211,7 @@ public class StrawpoolImpl implements Strawpool{
                         String rupool = "http://www."+matcher2.group();
                         if(!task.contains(rupool)){
                             task.add(rupool);
-                            startVoteRupool(rupool, voteFor, threads);
+                            startVoteRupool(rupool, voteFor, threads, money);
                         }}
                     STR = matcher.find();
                     RUP = matcher2.find();
@@ -229,74 +224,39 @@ public class StrawpoolImpl implements Strawpool{
             }
         } });
     }
-    public void scanAll(final int threads, final int[] voteFor)
+    public void scanAll(final int[] options, final int threads, final boolean money)
     {
-        final Pattern pattern = Pattern.compile("strawpoll.me/\\d*");
+        final Pattern strpatt = Pattern.compile("strawpoll.me/\\d*");
+        final Pattern ruppatt = Pattern.compile("rupoll.com/\\w*.html");
         Executor executor = Executors.newSingleThreadExecutor();
-        final List<Scanner> scanners = new ArrayList<>();
-        for(String channel: getIds()){
-            scanners.add(new Scanner(channel));
-        };
+        final Scanner scanner = new Scanner();
         executor.execute(new Runnable() { public void run() {
             while (true){
-                for(Scanner scanner1: scanners){
-                Matcher matcher = pattern.matcher(scanner1.getResponse().replace("\\", ""));
-                boolean STR = matcher.find();
+                Matcher strmatch = strpatt.matcher(scanner.getResponse().replace("\\", ""));
+                Matcher rupmatch = ruppatt.matcher(scanner.getResponse().replace("\\", ""));
+                boolean STR = strmatch.find();
+                boolean RUP = rupmatch.find();
                 if(STR){
-                    String strawpool = "http://www."+matcher.group();
+                    String strawpool = "http://www."+strmatch.group();
                     if(!task.contains(strawpool)){
                         task.add(strawpool);
-                        System.out.println(String.format("Starting vote STR in chat: %s - %s - STR: %s", HelloApp.channels.getStreamerNameByChannelId(scanner1.getChatId()), "http://sc2tv.ru/content/"+HelloApp.channels.getTitleByChannelId(scanner1.getChatId()), strawpool));
-                        startVoteStrawpool(strawpool, voteFor, threads);
+                        System.out.println(String.format("Starting vote STR in chat: %s - %s - STR: %s", HelloApp.channels.getStreamerNameByChannelId(scanner.getChatId()), "http://sc2tv.ru/content/"+HelloApp.channels.getTitleByChannelId(scanner.getChatId()), strawpool));
+                        startVoteStrawpool(strawpool, options, threads);
                     }}
-            }
+                if(RUP){
+                    String rupool = "http://www."+rupmatch.group();
+                    if(!task.contains(rupool)){
+                        task.add(rupool);
+                        System.out.println(String.format("Starting vote STR in chat: %s - %s - STR: %s", HelloApp.channels.getStreamerNameByChannelId(scanner.getChatId()), "http://sc2tv.ru/content/"+HelloApp.channels.getTitleByChannelId(scanner.getChatId()), rupool));
+                        startVoteRupool(rupool, options, threads, money);
+                    }}
                 try {
-                    Thread.sleep(10000);
+                    Thread.sleep(4000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-        }} });
-    }
+            }
 
-    public String[] getIds(){
-        String resp = "";
-        List<String> toReturn = new ArrayList<>();
-        resp = webClient.executeGet("http://chat.sc2tv.ru/memfs/channels.json", new HashMap<String, String>());
-        JSONParser parser = new JSONParser();
-        Object obj = null;
-        try {
-            obj = parser.parse(resp);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        JSONObject jsonObj = (JSONObject) obj;
-        JSONArray objects = (JSONArray) jsonObj.get("channel");
-
-        objects.remove(0);
-        for(Object object: objects){
-            toReturn.add((String) ((JSONObject) object).get("channelId"));
-        }
-        return toReturn.toArray(new String[toReturn.size()]);
-    }
-
-    public String getId(String channel){
-        String resp = "";
-        resp = webClient.executeGet("http://chat.sc2tv.ru/memfs/channels.json", new HashMap<String, String>());
-        JSONParser parser = new JSONParser();
-        Object obj = null;
-        try {
-            obj = parser.parse(resp);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        JSONObject jsonObj = (JSONObject) obj;
-        JSONArray objects = (JSONArray) jsonObj.get("channel");
-        objects.remove(0);
-        for(Object object: objects){
-           if(((String)((JSONObject)object).get("streamerName")).contains(channel))
-               return (String) ((JSONObject)object).get("channelId");
-        }
-        return "";
+        } });
     }
 }

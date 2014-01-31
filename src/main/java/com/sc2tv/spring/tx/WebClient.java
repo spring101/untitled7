@@ -94,6 +94,38 @@ public class WebClient {
 
             return responseText;
     }
+    public String executeGet(String url){
+        HttpGet get = new HttpGet(url);
+        get.setHeader("Referer", url);
+        get.setHeader("com.sc2tv.spring.tx.User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:25.0) Gecko/20100101 Firefox/25.0");
+        HttpResponse response = null;
+        int tries=0;
+        try{
+            response = httpClient.execute(get);
+        }
+        catch (HttpHostConnectException httpHostConnectException)
+        {
+
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        String responseText="";
+        try{
+            responseText = IOUtils.toString(response.getEntity().getContent());
+
+            response.getEntity().getContent().close();
+        }
+        catch(ZipException exp){
+            System.out.println(exp.getStackTrace());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return responseText;
+    }
     public String executeGet(String url, Map<String, String> params){
         if(params!=null)
         if (!params.isEmpty()) {

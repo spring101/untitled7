@@ -1,5 +1,6 @@
 package com.sc2tv.spring.tx;
 
+import com.sc2tv.spring.tx.chat.Channels;
 import com.sc2tv.spring.tx.model.ProxyUnit;
 import com.sc2tv.spring.tx.model.Sc2TvUser;
 import net.minidev.json.JSONObject;
@@ -16,11 +17,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class User{
+public class User extends Sc2TvUser{
+
     private String chat_token;
     private WebClient webClient;
-    private ProxyUnit proxyUnit;
-    private Sc2TvUser sc2TvUser;
+
+    public boolean isLoggedIn() {
+        return loggedIn;
+    }
     private boolean loggedIn = false;
     public WebClient getWebClient() {
         return webClient;
@@ -28,16 +32,22 @@ public class User{
     public void setWebClient(WebClient webClient) {
         this.webClient = webClient;
     }
-    public User(Sc2TvUser sc2TvUser, ProxyUnit proxyUnit) {
-        this.sc2TvUser = sc2TvUser;
-        this.proxyUnit = proxyUnit;
+    public User(ProxyUnit proxyUnit) {
+        super();
         webClient = new WebClient();
         webClient.setProxyUnit(proxyUnit);
         logIn();
     }
 
-    private void vote(String channelTitle, int vote){
-        String response = webClient.executeGet(String.format("http://sc2tv.ru/content/%s", channelTitle), new HashMap<String, String>());
+    private void vote(String channelId, int vote){
+        String response;
+        Channels channels = new Channels();
+        if(channels.getTitleByChannelId(channelId).equals(channels.getStreamerNameByChannelId(channelId))){
+            response = webClient.executeGet(String.format("http://sc2tv.ru/%s", channels.getStreamerNameByChannelId(channelId)));
+        }
+        else{
+            response = webClient.executeGet(String.format("http://sc2tv.ru/content/%s", channels.getTitleByChannelId(channelId)));
+        }
         Document doc = Jsoup.parse(response);
         String url;
         if(vote==-1){
@@ -51,11 +61,11 @@ public class User{
         parameters.add(new BasicNameValuePair("ctools_ajax", "1"));
         webClient.executePost(url, parameters);
     }
-    public void voteUp(String channelTitle){
-        vote(channelTitle, 1);
+    public void voteUp(String channelId){
+        vote(channelId, 1);
     }
-    public void voteDown(String channelTitle){
-        vote(channelTitle, -1);
+    public void voteDown(String channelId){
+        vote(channelId, -1);
     }
     private void logIn(){
         String response = webClient.executeGet("http://sc2tv.ru", new HashMap<String, String>());
@@ -65,9 +75,9 @@ public class User{
         List<NameValuePair> parameters = new ArrayList<>();
         parameters.add(new BasicNameValuePair("form_build_id", form_build_id));
         parameters.add(new BasicNameValuePair("form_id", "user_login_block"));
-        parameters.add(new BasicNameValuePair("name", sc2TvUser.getUsername()));
+        parameters.add(new BasicNameValuePair("name", getUsername()));
         parameters.add(new BasicNameValuePair("op", "Вход"));
-        parameters.add(new BasicNameValuePair("pass", sc2TvUser.getPassword()));
+        parameters.add(new BasicNameValuePair("pass", getPassword()));
         System.out.println(webClient.executePost("http://sc2tv.ru/all", parameters));
         Map<String, String> params = new HashMap<>();
         params.put("task", "GetUserInfo");
