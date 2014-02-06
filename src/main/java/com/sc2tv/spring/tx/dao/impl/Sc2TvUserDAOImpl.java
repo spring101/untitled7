@@ -7,7 +7,6 @@ import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,10 +14,10 @@ import java.util.List;
 
 @Service
 @Transactional
-@Repository
+
 public class Sc2TvUserDAOImpl implements Sc2TvUserDAO {
     @Autowired
-    private SessionFactory sessionFactory;
+    SessionFactory sessionFactory;
 
     @Override
     public void insertSc2TvUser(Sc2TvUser sc2TvUser){
@@ -56,7 +55,6 @@ public class Sc2TvUserDAOImpl implements Sc2TvUserDAO {
         return (Sc2TvUser)query.list().get(0);
     }
     @Override
-    @SuppressWarnings("unhecked")
     public List<Sc2TvUser> getSc2TvUsers(){
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Sc2TvUser.class);
         return criteria.list();

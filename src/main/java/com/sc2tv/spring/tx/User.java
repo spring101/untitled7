@@ -32,13 +32,20 @@ public class User extends Sc2TvUser{
     public void setWebClient(WebClient webClient) {
         this.webClient = webClient;
     }
+    public User(Sc2TvUser sc2TvUser) {
+        super(sc2TvUser);
+        webClient = new WebClient();
+        String[] proxy = sc2TvUser.getProxy().split(":");
+        ProxyUnit proxyUnit = new ProxyUnit(proxy[0], Integer.parseInt(proxy[1]));
+        webClient.setProxyUnit(proxyUnit);
+        logIn();
+    }
     public User(ProxyUnit proxyUnit) {
         super();
         webClient = new WebClient();
         webClient.setProxyUnit(proxyUnit);
         logIn();
     }
-
     private void vote(String channelId, int vote){
         String response;
         Channels channels = new Channels();

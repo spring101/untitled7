@@ -57,6 +57,13 @@ public class Sc2TvUser
         this.proxy = proxy;
         this.emailPass = emailPass;
     }
+    public Sc2TvUser(Sc2TvUser sc2TvUser) {
+        this.username = sc2TvUser.getUsername();
+        this.password = sc2TvUser.getPassword();
+        this.email = sc2TvUser.getEmail();
+        this.proxy = sc2TvUser.getProxy();
+        this.emailPass = sc2TvUser.getEmailPass();
+    }
 
     public String checkPassword(String email)
     {

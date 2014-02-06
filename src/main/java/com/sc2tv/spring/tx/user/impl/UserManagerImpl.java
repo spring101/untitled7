@@ -4,16 +4,16 @@ import com.sc2tv.spring.tx.User;
 import com.sc2tv.spring.tx.dao.Sc2TvUserDAO;
 import com.sc2tv.spring.tx.model.Sc2TvUser;
 import com.sc2tv.spring.tx.user.UserManager;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class UserManagerImpl implements UserManager {
-    ApplicationContext ctx = new ClassPathXmlApplicationContext("../webapp/WEB-INF/spring-config.xml");
-    Sc2TvUserDAO sc2TvUserDAO = (Sc2TvUserDAO) ctx.getBean("Sc2TvUserDAOImpl");
+    @Autowired
+    Sc2TvUserDAO sc2TvUserDAO;
+
     @Override
     public User getUserById(int userId) {
         return (User)sc2TvUserDAO.getSc2TvUser(userId);

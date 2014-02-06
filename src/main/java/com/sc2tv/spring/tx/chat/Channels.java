@@ -27,28 +27,38 @@ public class Channels {
             if(channel.getStreamerName().equals(streamerName))
                 return channel.getChannelTitle();
         }
-        return "";
+        return null;
     };
     public String getTitleByChannelId(String channelId){
         for(Channel channel: channels){
             if(channel.getChannelId().equals(channelId))
                 return channel.getChannelTitle();
         }
-        return "";
+        return null;
     };
+    public String evaluateChannel(String param){
+        String id;
+        if(getStreamerNameByChannelId(param)!=null){
+            return param;
+        }
+        else if((id=getChannelIdByStreamerName(param))!=null){
+            return id;
+        }
+        return null;
+    }
     public String getStreamerNameByChannelId(String channelId){
         for(Channel channel: channels){
             if(channel.getChannelId().equals(channelId))
                 return channel.getStreamerName();
         }
-        return "";
+        return null;
     };
     public String getChannelIdByStreamerName(String streamerName){
         for(Channel channel: channels){
             if(channel.getStreamerName().equals(streamerName))
                 return channel.getChannelId();
         }
-        return "";
+        return null;
     }
     public Map<String, List<Message>> getAllMessages(){
         Map<String, List<Message>> toReturn = new HashMap<>();

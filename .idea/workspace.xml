@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="569372ff-0377-410d-9272-0bff92e0551d" name="Default" comment="Channel-chat &amp; mod-chat added;&#10;Strawpool functions, channels, channel classes reworked;&#10;IOService added (does not work);&#10;Reworked views and other stuff&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/Command.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/Commands.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/impl/CommandsImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/Functions.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/ch.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/js/bb_code.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/js/chat.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/js/jquery.cookie.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/js/smiles.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\jkkjl\IdeaProjects\untitled7\src\main\webapp\js\jquery.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/chat/Channel.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/chat/Channel.java" />
+    <list default="true" id="569372ff-0377-410d-9272-0bff92e0551d" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/ExecutableFunction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Factory/FunctionFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Factory/Impl/FunctionFactoryImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Param.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/ParamType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/ScanChat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Validator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/VoteRedChat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/VoteStreamer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/WriteInChat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/functionsData.vm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/input.vm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/parameterParser.js" />
+      <change type="MOVED" beforePath="C:\Users\jkkjl\IdeaProjects\untitled7\src\main\java\com\sc2tv\spring\tx\service\IOService\Functions.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Functions.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/chat/Channels.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/chat/Channels.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/HelloApp.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/HelloApp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/Command.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/Command.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/Commands.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/Commands.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/impl/CommandsImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/impl/CommandsImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/web/controller/HelloController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/web/controller/HelloController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/Scanner.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/Scanner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/strawpool/Strawpool.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/strawpool/Strawpool.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/strawpool/imp/StrawpoolImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/strawpool/imp/StrawpoolImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/model/Sc2TvUser.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/model/Sc2TvUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/dao/impl/Sc2TvUserDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/dao/impl/Sc2TvUserDAOImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/user/UserManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/user/UserManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/user/impl/UserManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/user/impl/UserManagerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/WebClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/WebClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/channel.vm" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/channel.vm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/channels.vm" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/channels.vm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/chat.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/chat.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/servlet-context.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/servlet-context.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled7.iws" />
@@ -82,7 +81,83 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/impl/CommandsImpl.java" line="40" class="com.sc2tv.spring.tx.service.IOService.commands.impl.CommandsImpl" package="com.sc2tv.spring.tx.service.IOService.commands.impl">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/WriteInChat.java" line="77" class="com.sc2tv.spring.tx.service.IOService.ActionService.Functions.Impl.WriteInChat" package="com.sc2tv.spring.tx.service.IOService.ActionService.Functions.Impl">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/WriteInChat.java" line="78" class="com.sc2tv.spring.tx.service.IOService.ActionService.Functions.Impl.WriteInChat" package="com.sc2tv.spring.tx.service.IOService.ActionService.Functions.Impl">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/WriteInChat.java" line="79" class="com.sc2tv.spring.tx.service.IOService.ActionService.Functions.Impl.WriteInChat" package="com.sc2tv.spring.tx.service.IOService.ActionService.Functions.Impl">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/WriteInChat.java" line="80" class="com.sc2tv.spring.tx.service.IOService.ActionService.Functions.Impl.WriteInChat" package="com.sc2tv.spring.tx.service.IOService.ActionService.Functions.Impl">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -91,27 +166,187 @@
     <favorites_list name="untitled7" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3931947">
+    <splitter split-orientation="horizontal" split-proportion="0.38127092">
       <split-first>
+        <leaf>
+          <file leaf-file-name="channel.vm" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/channel.vm">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="57" column="7" selection-start="2077" selection-end="2077" vertical-scroll-proportion="-35.307693" vertical-offset="51" max-vertical-offset="1071">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Channels.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/chat/Channels.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="104" column="16" selection-start="3661" selection-end="3698" vertical-scroll-proportion="0.0" vertical-offset="908" max-vertical-offset="2108">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="parameterParser.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/webapp/js/parameterParser.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="30" column="28" selection-start="894" selection-end="894" vertical-scroll-proportion="-19.615385" vertical-offset="0" max-vertical-offset="1207">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ProxyUnitDAOImpl.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/dao/impl/ProxyUnitDAOImpl.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="18" column="13" selection-start="611" selection-end="611" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1139">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="VoteRedChat.java" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/VoteRedChat.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="24" column="57" selection-start="875" selection-end="875" vertical-scroll-proportion="0.4047619" vertical-offset="0" max-vertical-offset="578">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
         <leaf>
           <file leaf-file-name="HelloController.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/web/controller/HelloController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="34" column="42" selection-start="1252" selection-end="1303" vertical-scroll-proportion="0.0" vertical-offset="81" max-vertical-offset="714">
+                <state line="27" column="0" selection-start="1026" selection-end="1026" vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="1190">
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CommandsImpl.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/impl/CommandsImpl.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="55" column="0" selection-start="1904" selection-end="1904" vertical-scroll-proportion="0.0" vertical-offset="406" max-vertical-offset="1054">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Validator.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Validator.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="44" column="0" selection-start="1894" selection-end="1894" vertical-scroll-proportion="0.0" vertical-offset="426" max-vertical-offset="1989">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Param.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Param.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="2" column="13" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FunctionFactoryImpl.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Factory/Impl/FunctionFactoryImpl.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="21" column="0" selection-start="894" selection-end="894" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Map.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/util/Map.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="199" column="6" selection-start="9031" selection-end="9031" vertical-scroll-proportion="0.0" vertical-offset="2765" max-vertical-offset="7837">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Commands.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/Commands.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="7" column="19" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Command.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/Command.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="25" column="31" selection-start="476" selection-end="476" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+                  <folding>
+                    <element signature="e#491#492#0" expanded="true" />
+                    <element signature="e#523#524#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="StrawpoolImpl.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/strawpool/imp/StrawpoolImpl.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="27" column="7" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="3944">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
           <file leaf-file-name="Functions.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/Functions.java">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Functions.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="71" column="12" selection-start="3016" selection-end="3016" vertical-scroll-proportion="0.0" vertical-offset="968" max-vertical-offset="1530">
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <marker date="1391203794239" expanded="true" signature="2928:3595" placeholder="{...}" />
-                    <marker date="1391203794239" expanded="true" signature="3002:3128" placeholder="{...}" />
-                  </folding>
+                <state line="61" column="43" selection-start="2542" selection-end="2542" vertical-scroll-proportion="0.0" vertical-offset="355" max-vertical-offset="1037">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DualStackPlainSocketImpl.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/net/DualStackPlainSocketImpl.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="281" column="22" selection-start="8066" selection-end="8066" vertical-scroll-proportion="0.0" vertical-offset="3822" max-vertical-offset="4743">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="layout.vm" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.vm">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="13" column="0" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="323">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="WriteInChat.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/WriteInChat.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="22" column="10" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1292">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ScanChat.java" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/ScanChat.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="63" column="26" selection-start="2341" selection-end="2341" vertical-scroll-proportion="1.2294737" vertical-offset="283" max-vertical-offset="1241">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -125,160 +360,64 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="spring-config.xml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-config.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="19" column="4" selection-start="748" selection-end="748" vertical-scroll-proportion="-8.52" vertical-offset="110" max-vertical-offset="1020">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/User.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="39" column="37" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1938">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="UserManagerImpl.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/user/impl/UserManagerImpl.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="14" column="0" selection-start="472" selection-end="655" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+                <state line="15" column="0" selection-start="451" selection-end="451" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="User.java" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/User.java">
+          <file leaf-file-name="Sc2TvUserDAOImpl.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/dao/impl/Sc2TvUserDAOImpl.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="31" column="16" selection-start="859" selection-end="859" vertical-scroll-proportion="0.33555928" vertical-offset="37" max-vertical-offset="1887">
-                  <folding>
-                    <element signature="e#702#703#0" expanded="true" />
-                    <element signature="e#733#734#0" expanded="true" />
-                    <element signature="e#893#894#0" expanded="true" />
-                    <element signature="e#935#936#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Command.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/Command.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="2" column="13" selection-start="61" selection-end="61" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-                  <folding>
-                    <element signature="e#283#284#0" expanded="false" />
-                    <element signature="e#310#311#0" expanded="false" />
-                    <element signature="e#350#351#0" expanded="false" />
-                    <element signature="e#382#383#0" expanded="false" />
-                    <element signature="e#416#417#0" expanded="false" />
-                    <element signature="e#446#447#0" expanded="false" />
-                    <element signature="e#492#493#0" expanded="false" />
-                    <element signature="e#530#531#0" expanded="false" />
-                    <marker date="1391189691344" expanded="true" signature="158:223" placeholder="{...}" />
-                    <marker date="1391189691344" expanded="true" signature="244:252" placeholder="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Commands.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/Commands.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="2" column="17" selection-start="74" selection-end="74" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+                <state line="20" column="0" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CommandsImpl.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/impl/CommandsImpl.java">
+          <file leaf-file-name="VoteStreamer.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/VoteStreamer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="27" column="0" selection-start="755" selection-end="755" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+                <state line="47" column="75" selection-start="1731" selection-end="1731" vertical-scroll-proportion="0.0" vertical-offset="475" max-vertical-offset="1241">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="StrawpoolImpl.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/strawpool/imp/StrawpoolImpl.java">
+          <file leaf-file-name="ExecutableFunction.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/ExecutableFunction.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="189" column="23" selection-start="10226" selection-end="10330" vertical-scroll-proportion="-5.12" vertical-offset="2473" max-vertical-offset="3944">
-                  <folding>
-                    <element signature="e#12338#13988#0" expanded="true" />
-                    <element signature="e#13985#13986#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Strawpool.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/strawpool/Strawpool.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="8" column="0" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+                <state line="8" column="0" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="272">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ch.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ch.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="321" column="4" selection-start="11044" selection-end="11044" vertical-scroll-proportion="-7.68" vertical-offset="5265" max-vertical-offset="8449">
-                  <folding>
-                    <marker date="1391179532940" expanded="false" signature="3458:3471" placeholder="..." />
-                    <marker date="1391179532940" expanded="false" signature="3605:3618" placeholder="..." />
-                    <marker date="1391179532940" expanded="false" signature="3682:3695" placeholder="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="HelloApp.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/HelloApp.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="32" column="58" selection-start="1119" selection-end="1134" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1955">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Scanner.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/Scanner.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="25" column="18" selection-start="704" selection-end="704" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Channels.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/chat/Channels.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="15" column="4" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="1938">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="StrawpoolImpl.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/strawpool/imp/StrawpoolImpl.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="27" column="7" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3944">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Functions.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/Functions.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="20" column="9" selection-start="775" selection-end="775" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#writeInChat#0;class#Bot#0;class#Functions#0" expanded="false" />
-                    <element signature="method#voteFor#0;class#Bot#0;class#Functions#0" expanded="false" />
-                    <element signature="method#voteFor#1;class#Bot#0;class#Functions#0" expanded="false" />
-                    <element signature="class#Pool#0;class#Functions#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="bb_code.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="bb_code.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/webapp/js/bb_code.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="41" column="45" selection-start="1832" selection-end="1832" vertical-scroll-proportion="0.8006042" vertical-offset="167" max-vertical-offset="833">
+                <state line="41" column="45" selection-start="1832" selection-end="1832" vertical-scroll-proportion="0.0" vertical-offset="157" max-vertical-offset="833">
                   <folding />
                 </state>
               </provider>
@@ -305,26 +444,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/velocity.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/web/HelloController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.vm" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/web/Launcher.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/WebClient2.java" />
-        <option value="$PROJECT_DIR$/../untitled11/src/com/company/WebClient2.java" />
-        <option value="$PROJECT_DIR$/../untitled11/src/main/java/com/company/WebClient2.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/dao/impl/ProxyUnitDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/dao/impl/Sc2TvUserDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/model/Sc2TvUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/model/ProxyUnit.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/css/chat.css" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/proxy/impl/ProxyManagerImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-config.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/css/channels.css" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/Message.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/Channel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/Channels.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/MailClass.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/bb_code.js" />
@@ -333,28 +452,49 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/WebClient.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/chat.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/servlet-context.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/channel.vm" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/web/controller/HelloController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/chat.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/strawpool/Commands.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/commands/Commands.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/Commands.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/command/Command.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/command/Command.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/command/impl/CommandImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/CommandImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/ch.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/Command.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/impl/CommandsImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/Scanner.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/user/UserManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/HelloApp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/user/impl/UserManagerImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/chat/Channels.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/strawpool/imp/StrawpoolImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/strawpool/Strawpool.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/Functions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/ExecutableFunction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/FunctionFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/impl/FunctionFactoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/Factory/Impl/FunctionFactoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Factory/ExecutableFunction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Param.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/Command.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/ExecutableFunction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Factory/FunctionFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/chat/Channels.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/model/Sc2TvUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/User.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/input.vm" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/functionsData.vm" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/ParamType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Factory/Impl/FunctionFactoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/VoteRedChat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Functions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/Commands.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/channel.vm" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Validator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/impl/CommandsImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/web/controller/HelloController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/parameterParser.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/WriteInChat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/dao/impl/Sc2TvUserDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/user/impl/UserManagerImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/VoteStreamer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/ScanChat.java" />
       </list>
     </option>
   </component>
@@ -425,8 +565,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -468,6 +608,66 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -792,52 +992,6 @@
               <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="strawpool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="strawpool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="imp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -995,6 +1149,190 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IOService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ActionService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IOService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ActionService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Functions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IOService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ActionService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Functions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IOService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ActionService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Factory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1034,40 +1372,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1091,7 +1395,7 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="options.lastSelected" value="appearance" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -1475,7 +1779,11 @@
       <workItem from="1391001882770" duration="37000" />
       <workItem from="1391002300439" duration="39989000" />
       <workItem from="1391113528713" duration="3544000" />
-      <workItem from="1391155320485" duration="30481000" />
+      <workItem from="1391155320485" duration="114142000" />
+      <workItem from="1391435933048" duration="2620000" />
+      <workItem from="1391464768004" duration="34443000" />
+      <workItem from="1391527016425" duration="27884000" />
+      <workItem from="1391609653664" duration="30889000" />
     </task>
     <task id="LOCAL-00001">
       <created>1391002787831</created>
@@ -1493,11 +1801,15 @@
       <created>1391033234244</created>
       <updated>1391033234244</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Channel-chat &amp; mod-chat added;&#10;Strawpool functions, channels, channel classes reworked;&#10;IOService added (does not work);&#10;Reworked views and other stuff&#10;">
+      <created>1391204070922</created>
+      <updated>1391204070922</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149346000" />
+    <option name="totallyTimeSpent" value="328843000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1524,29 +1836,29 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3291866" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.46131805" sideWeight="0.49972633" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295129" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955715" sideWeight="0.4996938" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32344496" sideWeight="0.7305644" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19043063" sideWeight="0.658147" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32822967" sideWeight="0.49893504" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.56446993" sideWeight="0.7291441" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28366762" sideWeight="0.658147" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3291866" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28366762" sideWeight="0.34185302" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32535884" sideWeight="0.4978701" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32282713" sideWeight="0.5676251" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295129" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13258786" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295129" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20394036" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3387471" sideWeight="0.7908788" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1582,159 +1894,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/net/DualStackPlainSocketImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="270" column="22" selection-start="7653" selection-end="7653" vertical-scroll-proportion="0.0" vertical-offset="4006" max-vertical-offset="4743" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../untitled11/src/main/java/com/company/WebClient2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="23" selection-start="2074" selection-end="2074" vertical-scroll-proportion="-0.8230384" vertical-offset="952" max-vertical-offset="3366" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/jre/lib/rt.jar!/sun/misc/Unsafe.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="212" column="23" selection-start="6049" selection-end="6049" vertical-scroll-proportion="0.0" vertical-offset="3381" max-vertical-offset="5695" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/util/regex/Pattern.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1020" column="26" selection-start="47712" selection-end="47712" vertical-scroll-proportion="0.0" vertical-offset="16607" max-vertical-offset="95506" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/AppConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/CaptchaRecognition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="343" selection-end="343" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="743" column="0" selection-start="27685" selection-end="27685" vertical-scroll-proportion="0.0" vertical-offset="11820" max-vertical-offset="34238" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/model/ProxyUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="31" selection-start="3666" selection-end="3666" vertical-scroll-proportion="-63.68" vertical-offset="176" max-vertical-offset="1921" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/web/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="35" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/velocity.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/proxy/ProxyManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="9" selection-start="658" selection-end="658" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="561" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/dao/ProxyUnitDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/proxy/impl/ProxyManagerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="876" selection-end="876" vertical-scroll-proportion="-2.7200737" vertical-offset="1613" max-vertical-offset="2159" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="688">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="688">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/model/Sc2TvUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="948" selection-end="948" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1258">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/registraton/impl/RegistrationManagerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="18" selection-start="1033" selection-end="1035" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1989">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/MailClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="29" selection-start="961" selection-end="961" vertical-scroll-proportion="0.0" vertical-offset="614" max-vertical-offset="2516">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/chat/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="25" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0" vertical-offset="833" max-vertical-offset="1479">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="412" column="2" selection-start="7540" selection-end="7540" vertical-scroll-proportion="0.0" vertical-offset="6849" max-vertical-offset="18360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/chat/Channel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="43" selection-start="1371" selection-end="1371" vertical-scroll-proportion="0.0" vertical-offset="236" max-vertical-offset="1734">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="323">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/jquery.cookie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="9" selection-start="2474" selection-end="2474" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1513">
-          <folding />
-        </state>
+        <state line="412" column="2" selection-start="7540" selection-end="7540" vertical-scroll-proportion="0.0" vertical-offset="6849" max-vertical-offset="18360" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="19" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="15929">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/channels.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="25" selection-start="644" selection-end="644" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="527">
-          <folding />
-        </state>
+        <state line="47" column="19" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="15929" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/WebClient.java">
@@ -1746,86 +1913,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/smiles.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="33" selection-start="19389" selection-end="19389" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="70" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1020">
-          <folding />
-        </state>
+        <state line="11" column="33" selection-start="19389" selection-end="19389" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="364" column="0" selection-start="12375" selection-end="12375" vertical-scroll-proportion="-15.12" vertical-offset="5810" max-vertical-offset="18411">
-          <folding>
-            <marker date="1391157519758" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1391157519758" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1391157519758" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1391157519758" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1391157519758" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1391157519758" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1391157519758" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1391157519758" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/servlet-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="30" selection-start="740" selection-end="740" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <folding />
-        </state>
+        <state line="364" column="0" selection-start="12375" selection-end="12375" vertical-scroll-proportion="-15.12" vertical-offset="5810" max-vertical-offset="18411" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/channels.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/channel.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="65" selection-start="708" selection-end="708" vertical-scroll-proportion="-4.576923" vertical-offset="51" max-vertical-offset="510">
-          <folding />
-        </state>
+        <state line="7" column="13" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/chat.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="6" selection-start="758" selection-end="758" vertical-scroll-proportion="-4.4" vertical-offset="757" max-vertical-offset="6494">
-          <folding />
-        </state>
+        <state line="51" column="6" selection-start="758" selection-end="758" vertical-scroll-proportion="-4.4" vertical-offset="757" max-vertical-offset="6494" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1713" column="0" selection-start="27439" selection-end="27439" vertical-scroll-proportion="0.33333334" vertical-offset="28901" max-vertical-offset="64821">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/Commands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="17" selection-start="74" selection-end="74" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
-          <folding />
-        </state>
+        <state line="1713" column="0" selection-start="27439" selection-end="27439" vertical-scroll-proportion="0.33333334" vertical-offset="28901" max-vertical-offset="64821" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/Scanner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="18" selection-start="704" selection-end="704" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/user/UserManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
           <folding />
         </state>
       </provider>
@@ -1837,121 +1950,342 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/user/impl/UserManagerImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/strawpool/Strawpool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="472" selection-end="655" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+        <state line="8" column="0" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="321" column="4" selection-start="11044" selection-end="11044" vertical-scroll-proportion="0.0" vertical-offset="5265" max-vertical-offset="8449">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/web/controller/HelloController.java">
+    <entry file="uml://JAVA/com.sc2tv.spring.tx.service">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.sc2tv.spring.tx.service</OriginalElement>
+          <nodes>
+            <node x="-27.0" y="-174.0">com.sc2tv.spring.tx.service.IOService</node>
+            <node x="0.0" y="73.0">com.sc2tv.spring.tx.service.strawpool</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-22.0" y="-44.0" />
+          <SelectedNodes>
+            <node>com.sc2tv.spring.tx.service.IOService</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.sc2tv.spring.tx.service.IOService.ActionService">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.sc2tv.spring.tx.service.IOService.ActionService</OriginalElement>
+          <nodes>
+            <node x="355.0625" y="260.701171875">com.sc2tv.spring.tx.service.IOService.ActionService.Functions</node>
+            <node x="0.0" y="486.0">com.sc2tv.spring.tx.service.IOService.ActionService.Factory</node>
+            <node x="0.0" y="0.0">com.sc2tv.spring.tx.service.IOService.ActionService.Validator</node>
+            <node x="0.0" y="332.0">com.sc2tv.spring.tx.service.IOService.ActionService.Param</node>
+            <node x="101.0" y="254.0">com.sc2tv.spring.tx.service.IOService.ActionService.ParamType</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="34.0" y="228.0" />
+          <SelectedNodes>
+            <node>com.sc2tv.spring.tx.service.IOService.ActionService.Factory</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MODULES/mdl-untitled7">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MODULES</ID>
+          <OriginalElement>mdl-untitled7</OriginalElement>
+          <nodes>
+            <node x="" y="">mdl-untitled7</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="59.0" y="14.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Factory/FunctionFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="42" selection-start="1252" selection-end="1303" vertical-scroll-proportion="0.0" vertical-offset="81" max-vertical-offset="714">
+        <state line="9" column="11" selection-start="424" selection-end="424" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/model/Sc2TvUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="49" selection-start="1714" selection-end="1714" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1377">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/Command.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/functionsData.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="61" selection-end="61" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+        <state line="6" column="0" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="204" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/input.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="29" selection-start="18" selection-end="29" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/chat/Channel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="43" selection-start="1371" selection-end="1371" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1394">
           <folding>
-            <element signature="e#283#284#0" expanded="false" />
-            <element signature="e#310#311#0" expanded="false" />
-            <element signature="e#350#351#0" expanded="false" />
-            <element signature="e#382#383#0" expanded="false" />
-            <element signature="e#416#417#0" expanded="false" />
-            <element signature="e#446#447#0" expanded="false" />
-            <element signature="e#492#493#0" expanded="false" />
-            <element signature="e#530#531#0" expanded="false" />
-            <marker date="1391189691344" expanded="true" signature="158:223" placeholder="{...}" />
-            <marker date="1391189691344" expanded="true" signature="244:252" placeholder="{...}" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1651#1652#0" expanded="false" />
+            <element signature="e#1683#1684#0" expanded="false" />
+            <element signature="e#1732#1733#0" expanded="false" />
+            <element signature="e#1774#1775#0" expanded="false" />
+            <element signature="e#1812#1813#0" expanded="false" />
+            <element signature="e#1847#1848#0" expanded="false" />
+            <element signature="e#1902#1903#0" expanded="false" />
+            <element signature="e#1950#1951#0" expanded="false" />
+            <element signature="e#1988#1989#0" expanded="false" />
+            <element signature="e#2023#2024#0" expanded="false" />
+            <element signature="e#2078#2079#0" expanded="false" />
+            <element signature="e#2126#2127#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/dao/impl/ProxyUnitDAOImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/servlet-context.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="611" selection-end="611" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1139">
+        <state line="27" column="4" selection-start="1488" selection-end="1488" vertical-scroll-proportion="1.0503433" vertical-offset="0" max-vertical-offset="612">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/dao/impl/Sc2TvUserDAOImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/ParamType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="997" selection-end="997" vertical-scroll-proportion="0.317757" vertical-offset="102" max-vertical-offset="1122">
+        <state line="5" column="0" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/channels.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="36" selection-start="618" selection-end="618" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="527" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/jquery.cookie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="9" selection-start="2474" selection-end="2474" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1513" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="323">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/ExecutableFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/bb_code.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="45" selection-start="1832" selection-end="1832" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="833">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/net/DualStackPlainSocketImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="281" column="22" selection-start="8066" selection-end="8066" vertical-scroll-proportion="0.0" vertical-offset="3822" max-vertical-offset="4743">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/chat/Channels.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="4" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="1938">
+        <state line="104" column="16" selection-start="3661" selection-end="3698" vertical-scroll-proportion="0.0" vertical-offset="1441" max-vertical-offset="2108">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/impl/CommandsImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/channel.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="755" selection-end="755" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+        <state line="57" column="7" selection-start="2077" selection-end="2077" vertical-scroll-proportion="-35.307693" vertical-offset="51" max-vertical-offset="1071">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="199" column="6" selection-start="9031" selection-end="9031" vertical-scroll-proportion="0.0" vertical-offset="2765" max-vertical-offset="7837">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Functions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="43" selection-start="2542" selection-end="2542" vertical-scroll-proportion="0.0" vertical-offset="355" max-vertical-offset="1037">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/strawpool/imp/StrawpoolImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="23" selection-start="10226" selection-end="10330" vertical-scroll-proportion="-5.12" vertical-offset="2473" max-vertical-offset="3944">
-          <folding>
-            <element signature="e#12338#13988#0" expanded="true" />
-            <element signature="e#13985#13986#0" expanded="true" />
-          </folding>
+        <state line="27" column="7" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="4556">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/Functions.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Param.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="12" selection-start="3016" selection-end="3016" vertical-scroll-proportion="0.0" vertical-offset="968" max-vertical-offset="1530">
+        <state line="2" column="13" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Factory/Impl/FunctionFactoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="894" selection-end="894" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/Commands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="19" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1391203794239" expanded="true" signature="2928:3595" placeholder="{...}" />
-            <marker date="1391203794239" expanded="true" signature="3002:3128" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/bb_code.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/Command.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="45" selection-start="1832" selection-end="1832" vertical-scroll-proportion="0.8006042" vertical-offset="167" max-vertical-offset="833">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/strawpool/Strawpool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="321" column="4" selection-start="11044" selection-end="11044" vertical-scroll-proportion="-7.68" vertical-offset="5265" max-vertical-offset="8449">
+        <state line="25" column="31" selection-start="476" selection-end="476" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
           <folding>
-            <marker date="1391179532940" expanded="false" signature="3458:3471" placeholder="..." />
-            <marker date="1391179532940" expanded="false" signature="3605:3618" placeholder="..." />
-            <marker date="1391179532940" expanded="false" signature="3682:3695" placeholder="..." />
+            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#523#524#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Validator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="0" selection-start="1894" selection-end="1894" vertical-scroll-proportion="0.0" vertical-offset="426" max-vertical-offset="1989">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/commands/impl/CommandsImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="0" selection-start="1904" selection-end="1904" vertical-scroll-proportion="0.0" vertical-offset="406" max-vertical-offset="1054">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/web/controller/HelloController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="1026" selection-end="1026" vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="1190">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/user/UserManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="4" selection-start="748" selection-end="748" vertical-scroll-proportion="-8.52" vertical-offset="110" max-vertical-offset="1020">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="16" selection-start="859" selection-end="859" vertical-scroll-proportion="0.33555928" vertical-offset="37" max-vertical-offset="1887">
-          <folding>
-            <element signature="e#702#703#0" expanded="true" />
-            <element signature="e#733#734#0" expanded="true" />
-            <element signature="e#893#894#0" expanded="true" />
-            <element signature="e#935#936#0" expanded="true" />
-          </folding>
+        <state line="39" column="37" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1938">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/dao/impl/Sc2TvUserDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/parameterParser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="28" selection-start="894" selection-end="894" vertical-scroll-proportion="-19.615385" vertical-offset="0" max-vertical-offset="1207">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/dao/impl/ProxyUnitDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="611" selection-end="611" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1139">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/VoteRedChat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="57" selection-start="875" selection-end="875" vertical-scroll-proportion="0.4047619" vertical-offset="0" max-vertical-offset="578">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/user/impl/UserManagerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="451" selection-end="451" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/VoteStreamer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="75" selection-start="1731" selection-end="1731" vertical-scroll-proportion="0.0" vertical-offset="475" max-vertical-offset="1241">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/WriteInChat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="10" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1292">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sc2tv/spring/tx/service/IOService/ActionService/Functions/Impl/ScanChat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="26" selection-start="2341" selection-end="2341" vertical-scroll-proportion="1.2294737" vertical-offset="283" max-vertical-offset="1241">
+          <folding />
         </state>
       </provider>
     </entry>
