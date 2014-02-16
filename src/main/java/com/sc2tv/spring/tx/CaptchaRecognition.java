@@ -12,6 +12,9 @@ import java.util.List;
 import java.util.Map;
 
 public class CaptchaRecognition {
+
+    //ALLO
+
     private String imageUrl;
     private byte[] bytes;
     private String apiToken = "893298284603e7a13e4e0d42140b6935";
