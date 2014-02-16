@@ -24,7 +24,7 @@ public class Launcher {
     UserManager userManager;
     @PostConstruct
     public void startup() throws InterruptedException {
-        registrationManager.checkMailsForRegistered();
+       // registrationManager.checkMailsForRegistered();
         strawpool.scanAll(new int[]{-1}, 60, true);
         proxyManager.setPool(65);
         ExecutorService executor = Executors.newSingleThreadExecutor();
