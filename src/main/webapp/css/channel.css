@@ -1,0 +1,11 @@
+.stream_player_body {
+    float: left;
+    background: #888;
+    display: inline;
+}
+.ct {
+    float: left;
+    height: 100px;
+    background: #ccc;
+    display: inline;
+}
