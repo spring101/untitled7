@@ -1,9 +1,10 @@
 package com.sc2tv.spring.tx.registraton;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
+import com.sc2tv.spring.tx.model.EmailClass;
 
 public interface RegistrationManager {
-    public int registerUser(int tries) throws IOException, URISyntaxException;
-    public int setPassword(String url) throws IOException;
+    // public int registerUser(WebClient webClient, User user, int tries) throws IOException, URISyntaxException;
+    public boolean register(String username);
+    public void checkMailsForRegistered();
+    public void check(EmailClass emailClass);
 }

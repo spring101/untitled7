@@ -14,11 +14,13 @@
 <div class="wrapper">
     <div class="table">
 
-    #foreach( $channel in $channels)
-        <div class="row">
-            <div class="col channel-id"><a href="/channels/channel?id=$channel.channelId"><b>$channel.streamerName</b> $channel.channelTitle</a></div>
-        </div>
-    #end
+        #foreach( $channel in $channels)
+            <div class="row">
+                <div class="col channel-id"><a
+                        href="/channels/channel?id=$channel.channelId"><b>$channel.streamerName</b> $channel.channelTitle
+                </a></div>
+            </div>
+        #end
     </div>
 </div>
 </body>

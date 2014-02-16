@@ -1,26 +1,21 @@
 import javax.persistence.*;
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.Proxy;
-import java.net.URL;
 
 /**
  * Created by jkkjl on 12/17/13.
  */
 @Entity
-@Table(name="PROXYUNIT")
+@Table(name = "PROXYUNIT")
 public class ProxyUnit {
     @Id
     @GeneratedValue
     private Long id;
     private Proxy proxy;
-    @Column(name="host")
+    @Column(name = "host")
     private String host;
-    @Column(name="port")
+    @Column(name = "port")
     private int port;
-    @Column(name="isAvaliable")
+    @Column(name = "isAvaliable")
     boolean isAvaliable;
 
     public ProxyUnit(boolean isAvaliable, String host, int port) {
@@ -32,7 +27,8 @@ public class ProxyUnit {
     public Proxy getProxy() {
         return proxy;
     }
-    public ProxyUnit(){
+
+    public ProxyUnit() {
     }
 
 
@@ -53,5 +49,6 @@ public class ProxyUnit {
     }
 
 
-    public void banUser(){}
+    public void banUser() {
+    }
 }

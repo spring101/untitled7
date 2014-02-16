@@ -1,6 +1,8 @@
 <datalist id="character">
-#foreach( $function in $functions)
-    <div class="row">
-        <div class="col channel-id"><a href="/channels/channel?id=$channel.channelId"><b>$channel.streamerName</b> $channel.channelTitle</a></div>
-    </div>
-#end
+    #foreach( $function in $functions)
+        <div class="row">
+            <div class="col channel-id"><a
+                    href="/channels/channel?id=$channel.channelId"><b>$channel.streamerName</b> $channel.channelTitle
+            </a></div>
+        </div>
+    #end

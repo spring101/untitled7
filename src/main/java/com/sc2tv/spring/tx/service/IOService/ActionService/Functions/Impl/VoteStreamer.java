@@ -2,7 +2,6 @@ package com.sc2tv.spring.tx.service.IOService.ActionService.Functions.Impl;
 
 import com.sc2tv.spring.tx.User;
 import com.sc2tv.spring.tx.chat.Channels;
-import com.sc2tv.spring.tx.model.Sc2TvUser;
 import com.sc2tv.spring.tx.service.IOService.ActionService.Functions.ExecutableFunction;
 import com.sc2tv.spring.tx.service.IOService.ActionService.Param;
 import com.sc2tv.spring.tx.service.IOService.ActionService.ParamType;
@@ -13,17 +12,23 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 @Service
 public class VoteStreamer implements ExecutableFunction {
     @Autowired
     Channels channels;
     @Autowired
     UserManager userManager;
+
     @Override
     public List<Param> getRequiredParams() {
         return requiredParams;
     }
-    List<Param> requiredParams = new ArrayList<Param>(){};
+
+    List<Param> requiredParams = new ArrayList<Param>() {
+    };
 
 
     public VoteStreamer() {
@@ -34,48 +39,62 @@ public class VoteStreamer implements ExecutableFunction {
 
     @Override
     public String execute(Map<Param, Object> params) {
-        String channelId = null;
+        String channelId = "";
         int vote = 0;
         int amount = 0;
-        for(Param param: params.keySet()){
+        for (Param param : params.keySet()) {
             Object o = params.get(param);
-            switch(param.getName()){
-                case "vote":{
-                    vote = Integer.valueOf(String.valueOf(o));
+            switch (param.getName()) {
+                case "vote": {
+                    vote = Integer.valueOf(param.objToString(o));
                     break;
                 }
-                case "channelId":{
-                    channelId = channels.evaluateChannel(String.valueOf(o));
+                case "channelId": {
+                    channelId = param.objToString(o);
                     break;
                 }
-                case "amount":{
-                    amount = Integer.valueOf(String.valueOf(o));
+                case "amount": {
+                    amount = Integer.valueOf(param.objToString(o));
                     break;
-                }
-            }
-            int counter = 0;
-            User user;
-            if(vote==1){
-                for(Sc2TvUser sc2TvUser: userManager.getNotBanned()){
-                    if(counter>amount){
-                        break;
-                    }
-                    user = new User(sc2TvUser);
-                    user.voteUp(channelId);
-                    counter++;
-                }
-            }
-            else if(vote==-1){
-                for(Sc2TvUser sc2TvUser: userManager.getNotBanned()){
-                    if(counter>amount){
-                        break;
-                    }
-                    user = new User(sc2TvUser);
-                    user.voteDown(channelId);
-                    counter++;
                 }
             }
         }
+        int counter = 0;
+        User user;
+        Map<String, User> users = userManager.getAvaliableUsers();
+        ExecutorService executorService = Executors.newFixedThreadPool(20);
+        final String streamerUrl = channels.evaluateChannel(channels.getStreamerNameByChannelId(channelId));
+        if (vote == 1) {
+            for (final User usr : users.values()) {
+                try {
+                    if (usr.isLoggedIn())
+                        executorService.submit(new Runnable() {
+                            @Override
+                            public void run() {
+                                usr.voteUp(streamerUrl);
+                            }
+                        });
+                    else {
+                    }
+                } catch (Exception exp) {
+                }
+                counter++;
+            }
+        } else if (vote == -1) {
+            for (final User usr : users.values()) {
+                try {
+                    executorService.submit(new Runnable() {
+                        @Override
+                        public void run() {
+                            usr.voteDown(streamerUrl);
+                        }
+                    });
+                } catch (Exception exp) {
+                }
+                counter++;
+            }
+        }
+        executorService.shutdown();
         return "done";
     }
 }

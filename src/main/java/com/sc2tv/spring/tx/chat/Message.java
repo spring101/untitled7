@@ -17,6 +17,7 @@ public class Message {
     }
 
     private String name;
+
     public Message() {
     }
 

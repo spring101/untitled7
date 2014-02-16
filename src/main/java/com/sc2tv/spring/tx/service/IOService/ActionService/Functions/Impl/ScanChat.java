@@ -11,23 +11,26 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
 @Service
 public class ScanChat implements ExecutableFunction {
     @Autowired
     Channels channels;
     @Autowired
     Strawpool strawpool;
+
     @Override
     public List<Param> getRequiredParams() {
         return requiredParams;
     }
 
-    List<Param> requiredParams = new ArrayList<Param>(){};
+    List<Param> requiredParams = new ArrayList<Param>() {
+    };
 
 
     public ScanChat() {
-        requiredParams.add(new Param("target",true, ParamType.STRING));
-        requiredParams.add(new Param("options",true, ParamType.INTARRAY));
+        requiredParams.add(new Param("target", true, ParamType.STRING));
+        requiredParams.add(new Param("options", true, ParamType.INTARRAY));
         requiredParams.add(new Param("threads", false, ParamType.INTEGER));
         requiredParams.add(new Param("channelId", true, ParamType.STRING));
         requiredParams.add(new Param("money", false, ParamType.BOOL));
@@ -40,38 +43,37 @@ public class ScanChat implements ExecutableFunction {
         String channelId = null;
         boolean money = false;
         String target = null;
-        for(Param param: params.keySet()){
+        for (Param param : params.keySet()) {
             Object o = params.get(param);
-            switch(param.getName()){
-                case "target":{
-                    target = (String)o;
+            switch (param.getName()) {
+                case "target": {
+                    target = (String) o;
                     break;
                 }
-                case "options":{
-                    options = (int[])o;
+                case "options": {
+                    options = (int[]) o;
                     break;
                 }
-                case "threads":{
+                case "threads": {
                     threads = Integer.valueOf(String.valueOf(o));
                     break;
                 }
-                case "channelId":{
+                case "channelId": {
                     channelId = channels.evaluateChannel(String.valueOf(o));
                     break;
                 }
-                case "money":{
+                case "money": {
                     money = Boolean.valueOf(String.valueOf(o));
                     break;
                 }
             }
         }
-        if(channelId == null){
+        if (channelId == null) {
             return "channel not found";
         }
-        if(target.equals("all")){
+        if (target.equals("all")) {
             strawpool.scanAll(options, threads, money);
-        }
-        else if(target.equals("single")){
+        } else if (target.equals("single")) {
             strawpool.scanSingle(channelId, threads, options, money);
         }
         return "done";

@@ -1,9 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr">
 <head>
     <link type="text/css" rel="stylesheet" media="all" href="/css/chat.css">
+    <link type="text/css" rel="stylesheet" media="all" href="/css/channel.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>SC2TV.RU chat</title>
+    <title>$title</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.9.1.js"></script>
@@ -12,6 +14,7 @@
     <script type="text/javascript" src="/js/smiles.js"></script>
     <script type="text/javascript" src="/js/bb_code.js"></script>
     <script type="text/javascript" src="/js/parameterParser.js"></script>
+    <script type="text/javascript" src="/js/apiInformation.js"></script>
     <script type="text/javascript" src="/js/ch.js"></script>
 
 </head>
@@ -19,40 +22,158 @@
 
 
 <script type="text/javascript">
-
+    readCount();
+    readBalance();
+    readProxy();
     var availableTags = $functions.getFunctionNames();
-    function submitBTN(text){
+    startProxyReader();
+    startAntigateBalance();
+    startUserCounter();
+    function submitBTN(text) {
         var fName = text.split(" ")[0];
+
         var params = getParametersConsole(fName, availableTags, text);
         var data = paramMapToMatrix(fName, params);
+        if ($('input[id="save"]').attr('checked') !== "checked") {
+            $('input[id="message"]').val('');
+        }
         $.ajax({
+            headers: {
+                Accept: "text/plain; charset=utf-8",
+                "Content-Type": "text/plain; charset=utf-8"
+            },
             type: 'POST',
-            // make sure you respect the same origin policy with this url:
-            // http://en.wikipedia.org/wiki/Same_origin_policy
-            url: '/action/'+data,
-
-            success: function(msg){
-                alert('wow' + msg);
+            url: '/action/' + data,
+            success: function (response) {
             }
         });
     }
-    function sendfunction(){
 
+    function enterkey() {
+        $("#message").keyup(function (event) {
+            if (event.keyCode == 13) {
+                $('button[id="messageSub"]').click();
+            }
+        });
+    }
+    function sendMessage(text) {
 
+        var fName = "write";
+        text = encodeURIComponent(text);
+        var params = {"-channelId":$channelId, "-message": text};
+        var data = paramMapToMatrix(fName, params);
+        if ($('input[id="save"]').attr('checked') !== "checked") {
+            $('input[id="message"]').val('');
+        }
+
+        $.ajax({
+            headers: {
+                Accept: "text/plain; charset=utf-8",
+                "Content-Type": "text/plain; charset=utf-8"
+            },
+            type: 'POST',
+            url: '/action/' + data,
+            success: function (response) {
+            }
+        });
+    }
+    function voteUP() {
+        var fName = "vote";
+        var params = {"-channelId":$channelId, "vote": "1", "amount": "300"};
+        var data = paramMapToMatrix(fName, params);
+        $.ajax({
+            headers: {
+                Accept: "text/plain; charset=utf-8",
+                "Content-Type": "text/plain; charset=utf-8"
+            },
+            type: 'POST',
+            url: '/action/' + data,
+            success: function (response) {
+            }
+        });
+    }
+    function writeAll(text){
+        text = encodeURIComponent(text);
+        var http = new XMLHttpRequest();
+        var url = "/action/writeall";
+        var params = "message="+text+"&channelId="+$channelId;
+        http.open("POST", url, true);
+        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        http.setRequestHeader("Content-length", params.length);
+        http.send(params);
+    }
+    function voteDOWN() {
+        var fName = "vote";
+        var params = {"-channelId":$channelId, "vote": "-1", "amount": "300"};
+        var data = paramMapToMatrix(fName, params);
+        $.ajax({
+            headers: {
+                Accept: "text/plain; charset=utf-8",
+                "Content-Type": "text/plain; charset=utf-8"
+            },
+            type: 'POST',
+            url: '/action/' + data,
+            success: function (response) {
+            }
+        });
+    }
+    function sendRedChat() {
+        var options = $('input[name="rchat"]:checked').val();
+        if (options == undefined) {
+            return;
+        }
+        var channelid = $channelId;
+        var fName = "redchat";
+        var params = {"-channelId": channelid, "-options": options}
+        var data = paramMapToMatrix(fName, params);
+        $.ajax({
+            headers: {
+                Accept: "text/plain; charset=utf-8",
+                "Content-Type": "text/plain; charset=utf-8"
+            },
+            type: 'POST',
+            url: '/action/' + data,
+            success: function (response) {
+            }
+        });
     }
 </script>
 
+<div id="proxyCount"></div>
+<div id="users"></div>
+<div id="balance"></div>
 
 <div class="ui-widget">
     <label for="tags"></label>
-    <input id="tags" onkeydown="sendfunction">
+    <input id="tags">
     <button type="submit" onclick=submitBTN($('input[id="tags"]').val())>submit</button>
 </div>
-<div id="dialog2">
-    <div id="add_styles"></div>
-    <div class="chat-channel-name"></div>
-    <div id="chat"></div>
+    <div id="dialog2">
+        <div id="add_styles"></div>
+        <div class="chat-channel-name"></div>
+        <div id="chat"></div>
+    </div>
+    </div>
+<div id="messages">
+    <input id="message" style="width: 200px" onkeydown=enterkey()>
+    <button type="submit" id="messageSub" onclick=sendMessage($('input[id="message"]').val())>Отправить</button>
+    <button type="submit" id="writeall" onclick=writeAll($('input[id="message"]').val())>Отправить всем</button>
+    <input type="checkbox" id="save" checked>сохранять текст
 </div>
+<div id="vote">
+    <input type="button" id="voteUP" value="voteUP" onclick="voteUP()"/>
+    <input type="button" id="voteDOWN" value="voteDOWN" onclick="voteDOWN()"/>
+</div>
+<br>
+
+<form id="redchat">
+    <input type="radio" name="rchat" value="1">1
+    <input type="radio" name="rchat" value="2">2
+    <input type="radio" name="rchat" value="3">3
+    <input type="radio" name="rchat" value="4">4
+    <input type="radio" name="rchat" value="5">5<br>
+    <input type="button" value="submut" name="submit" onclick="sendRedChat()"/>
+</form>
 
 </body>
 </html>

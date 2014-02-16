@@ -10,10 +10,10 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-    <mvc:annotation-driven />
-    <mvc:resources location="/css/" mapping="/css/**" />
-    <mvc:resources location="/js/" mapping="/js/**" />
-    <mvc:resources location="/img/" mapping="/img/**" />
+    <mvc:annotation-driven/>
+    <mvc:resources location="/css/" mapping="/css/**"/>
+    <mvc:resources location="/js/" mapping="/js/**"/>
+    <mvc:resources location="/img/" mapping="/img/**"/>
     <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
         <property name="resourceLoaderPath" value="/WEB-INF/views"/>
         <property name="configLocation" value="/WEB-INF/classes/velocity.properties"/>
@@ -25,6 +25,6 @@
         <property name="prefix" value=""/>
         <property name="suffix" value=".vm"/>
     </bean>
-    <context:component-scan base-package="com.sc2tv.spring.tx.web.controller" />
+    <context:component-scan base-package="com.sc2tv.spring.tx.web.controller"/>
 
 </beans>

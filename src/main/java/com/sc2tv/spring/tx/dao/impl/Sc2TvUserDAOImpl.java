@@ -7,36 +7,43 @@ import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service
+@Service("Sc2TvUserDaoService")
 @Transactional
-
 public class Sc2TvUserDAOImpl implements Sc2TvUserDAO {
     @Autowired
+    @Qualifier("sessionFactory")
     SessionFactory sessionFactory;
 
     @Override
-    public void insertSc2TvUser(Sc2TvUser sc2TvUser){
+    public void insertSc2TvUser(Sc2TvUser sc2TvUser) {
         sessionFactory.getCurrentSession().save(sc2TvUser);
     }
 
     @Override
-    public Sc2TvUser getSc2TvUser(int userId){
-        return (Sc2TvUser)sessionFactory.
+    public Sc2TvUser getSc2TvUser(int userId) {
+        return (Sc2TvUser) sessionFactory.
                 getCurrentSession().
                 get(Sc2TvUser.class, userId);
     }
 
     @Override
-    public Sc2TvUser getSc2TvUserByName(String username){
+    public Sc2TvUser getSc2TvUserByName(String username) {
         Query query = sessionFactory.
                 getCurrentSession().createQuery("from Sc2TvUser where username = :username");
         query.setParameter("username", username);
-        return (Sc2TvUser)query.list().get(0);
+        Sc2TvUser toReturn;
+        try {
+            toReturn = (Sc2TvUser) query.list().get(0);
+        } catch (Exception exp) {
+            return null;
+        }
+        return (Sc2TvUser) query.list().get(0);
     }
 
     @Override
@@ -44,18 +51,19 @@ public class Sc2TvUserDAOImpl implements Sc2TvUserDAO {
         Query query = sessionFactory.
                 getCurrentSession().createQuery("select email from Sc2TvUser where banned = :banned");
         query.setParameter("banned", banned);
-        return (List<String>)query.list();
+        return (List<String>) query.list();
     }
 
     @Override
-    public Sc2TvUser getSc2TvUserByEmail(String email){
+    public Sc2TvUser getSc2TvUserByEmail(String email) {
         Query query = sessionFactory.
                 getCurrentSession().createQuery("from Sc2TvUser where email = :email");
         query.setParameter("email", email);
-        return (Sc2TvUser)query.list().get(0);
+        return (Sc2TvUser) query.list().get(0);
     }
+
     @Override
-    public List<Sc2TvUser> getSc2TvUsers(){
+    public List<Sc2TvUser> getSc2TvUsers() {
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Sc2TvUser.class);
         return criteria.list();
     }

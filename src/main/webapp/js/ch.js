@@ -10,7 +10,7 @@ var user_name = '';
 var CHAT_RELOAD_INTERVAL = 5000;
 var CHAT_CHANNEL_RELOAD_INTERVAL = 300000;
 var SC2TV_URL = 'http://sc2tv.ru';
-var CHAT_URL =  'http://chat.sc2tv.ru/';
+var CHAT_URL = 'http://chat.sc2tv.ru/';
 var CHAT_GATE = CHAT_URL + 'gate.php';
 var chatTimerId = 0;
 var channelList = [];
@@ -23,10 +23,10 @@ var isModerator = false;
 var isModeratorActive;
 var processReplacesMessageInfo = [];
 var anon = true;
-if ( anon !== true ) {
-    $.ajaxSetup( { async: false, cache: false } );
+if (anon !== true) {
+    $.ajaxSetup({ async: false, cache: false });
 
-    $.getJSON( CHAT_GATE + '?task=GetUserInfo&ref=' + document.referrer, function( data ) {
+    $.getJSON(CHAT_GATE + '?task=GetUserInfo&ref=' + document.referrer, function (data) {
         userInfo = data;
     });
 
@@ -36,42 +36,42 @@ else {
     userInfo.type = 'anon';
 }
 
-if ( userInfo.type == 'anon' || userInfo.type == 'newbie'
-    || userInfo.type == 'bannedInChat' || userInfo.type == 'bannedOnSite' ) {
+if (userInfo.type == 'anon' || userInfo.type == 'newbie'
+    || userInfo.type == 'bannedInChat' || userInfo.type == 'bannedOnSite') {
     smileHtml = '';
 }
 else {
     smileHtml = '<div id="smile-panel-tab-1">';
     smilePanelTabsHtml = '<span id="smile-panel-pager-1" data-tab-number="1">[ 1 ]</span>';
     var privateStarted = false;
-    for( i=0,t=2; i < smilesCount; i++ ) {
+    for (i = 0, t = 2; i < smilesCount; i++) {
         inactiveSmileClass = '';
-        if ( smiles[i].private ) {
-            if ( !privateStarted ) {
+        if (smiles[i].private) {
+            if (!privateStarted) {
                 privateStarted = true;
                 smileHtml += '</div><div id="smile-panel-tab-' + t + '">';
                 smilePanelTabsHtml += '<span id="smile-panel-pager-' + t
-                    + '" data-tab-number="' + t +'">prime</span>';
+                    + '" data-tab-number="' + t + '">prime</span>';
                 smileHtml += '<a href="http://prime.sc2tv.ru/donate" target="_blank">Получить смайлы</a><br/>';
             }
 
             inactiveSmileClass = '-not-available';
-            for( k=0; k < userInfo.roleIds.length; k++){
-                if (smiles[i].roles.indexOf( userInfo.roleIds[k] ) !== -1) {
+            for (k = 0; k < userInfo.roleIds.length; k++) {
+                if (smiles[i].roles.indexOf(userInfo.roleIds[k]) !== -1) {
                     inactiveSmileClass = '';
                     break;
                 }
             }
         }
         smileHtml += '<img src="' + CHAT_IMG_DIR + smiles[i].img
-            +'" title="' + smiles[i].code +'" width="' + smiles[i].width
-            + '" height="' + smiles[i].height+ '"class="chat-smile'
+            + '" title="' + smiles[i].code + '" width="' + smiles[i].width
+            + '" height="' + smiles[i].height + '"class="chat-smile'
             + inactiveSmileClass + '" alt="' + smiles[i].code + '"/>';
 
-        if ( i > 0 && i % 37 == 0 && i < ( smilesCount - 1 ) && !privateStarted ) {
+        if (i > 0 && i % 37 == 0 && i < ( smilesCount - 1 ) && !privateStarted) {
             smileHtml += '</div><div id="smile-panel-tab-' + t + '">';
             smilePanelTabsHtml += '<span id="smile-panel-pager-' + t
-                + '" data-tab-number="' + t +'">[ ' + t + ' ]</span>';
+                + '" data-tab-number="' + t + '">[ ' + t + ' ]</span>';
             t++;
         }
     }
@@ -92,33 +92,33 @@ form_chat = '<div id="chat-form"><form id="chat-form-id" method="post" action=""
 
 form_anon = '';
 
-form_banned = '<div id="chat-form">' + divForFullScreen + chat_vkl_btn + ' ' + img_btn + ' ' + chat_history_link + ' ' + chat_rules_link +  ' <span>Вы были забанены. </span> <a href="/automoderation_history.htm" target="_blank">Причина</a></div>';
+form_banned = '<div id="chat-form">' + divForFullScreen + chat_vkl_btn + ' ' + img_btn + ' ' + chat_history_link + ' ' + chat_rules_link + ' <span>Вы были забанены. </span> <a href="/automoderation_history.htm" target="_blank">Причина</a></div>';
 
 form_newbie = '<div id="chat-form">' + divForFullScreen + chat_vkl_btn + ' ' + img_btn + ' ' + color_btn + ' ' + chat_history_link + ' <span>Вы зарегистрированы менее суток назад.</span></div>';
 
 var chat_channel_id = 0;
 autoScroll = 1;
 
-$(document).ready(function(){
+$(document).ready(function () {
     chat_channel_id = QueryString["id"];
-    if(QueryString["mod"]!=='1')
+    if (QueryString["mod"] !== '1')
         isModerator = false;
     else
         isModerator = true;
 
-    whoStopChat = getParameterByName( 'stop' );
+    whoStopChat = getParameterByName('stop');
     userInfo.type = 'anon';
-    BuildChat( userInfo );
+    BuildChat(userInfo);
 });
 
 
-function getParameterByName( name ) {
+function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regexS = "[\\?&]" + name + "=([^&#]*)";
     var regex = new RegExp(regexS);
     var results = regex.exec(window.location.href);
 
-    if( results == null ) {
+    if (results == null) {
         return '';
     }
     else {
@@ -127,63 +127,63 @@ function getParameterByName( name ) {
 }
 
 
-function StartChat(){
-    $.cookie( 'chat-on', '1', { expires: 365, path: '/'} );
+function StartChat() {
+    $.cookie('chat-on', '1', { expires: 365, path: '/'});
 
-    $( '#chat-on').hide();
-    $( '#chat-off' ).show();
-    $( '#smile-btn' ).show();
+    $('#chat-on').hide();
+    $('#chat-off').show();
+    $('#smile-btn').show();
 
-    chatTimerId = setInterval( 'ReadChat()', CHAT_RELOAD_INTERVAL );
-    if( isModerator ) {
-        channelListTimerId = setInterval( 'GetChannelsList()', CHAT_CHANNEL_RELOAD_INTERVAL );
+    chatTimerId = setInterval('ReadChat()', CHAT_RELOAD_INTERVAL);
+    if (isModerator) {
+        channelListTimerId = setInterval('GetChannelsList()', CHAT_CHANNEL_RELOAD_INTERVAL);
     }
 
-    $( '#chat-form-id' ).show();
-    ReadChat( true );
+    $('#chat-form-id').show();
+    ReadChat(true);
 }
 
 
-function GetChannelId( id ) {
-    id = id.replace( /[^0-9]/ig, '' );
-    if( id == '' ) {
+function GetChannelId(id) {
+    id = id.replace(/[^0-9]/ig, '');
+    if (id == '') {
         id = 0;
     }
     return id;
 }
 
 
-function ReadChat( firstRead ) {
+function ReadChat(firstRead) {
     // проверка, чтобы после отключения чат не обновился
-    if ( $.cookie( 'chat-on' ) == '0' ) {
+    if ($.cookie('chat-on') == '0') {
         return;
     }
 
-    if ( firstRead == true ){
+    if (firstRead == true) {
         $.ajaxSetup({ ifModified: false, cache: false });
     }
     else {
         $.ajaxSetup({ ifModified: true, cache: true });
     }
-    channelId= 0;
+    channelId = 0;
     // модеры читают все каналы
-    if( QueryString["mod"] == "1" ) {
-        $.getJSON( '/json/modChannel', function( jsonData ){
-            if ( jsonData != undefined ) {
+    if (QueryString["mod"] == "1") {
+        $.getJSON('/json/modChannel', function (jsonData) {
+            if (jsonData != undefined) {
                 var messageList = [];
                 messageList = jsonData.messages;
-                data = BuildHtml( messageList );
-                PutDataToChat( data );
+                data = BuildHtml(messageList);
+                PutDataToChat(data);
             }
         });
     }
     else {
-        $.getJSON( '/json/channel?channelId=' + chat_channel_id, function( jsonData ){
-            if ( jsonData != undefined ) {
+        $.getJSON('/json/channel?channelId=' + chat_channel_id, function (jsonData) {
+            if (jsonData != undefined) {
                 var messageList = [];
                 messageList = jsonData.messages;
-                data = BuildHtml( messageList );
-                PutDataToChat( data );
+                data = BuildHtml(messageList);
+                PutDataToChat(data);
             }
         });
     }
@@ -191,54 +191,63 @@ function ReadChat( firstRead ) {
 
 function setHeader(xhr) {
     xhr.setRequestHeader('Host', SC2TV_URL);
-    xhr.setRequestHeader('Referer', 'http://chat.sc2tv.ru/index.htm?channelId='+channelId);
+    xhr.setRequestHeader('Referer', 'http://chat.sc2tv.ru/index.htm?channelId=' + channelId);
 }
-function PutDataToChat( data ) {
-    channelId = GetChannelId( chat_channel_id );
+function PutDataToChat(data) {
+    channelId = GetChannelId(chat_channel_id);
 
-   if( isModerator ) {
+    if (isModerator) {
         data = data.replace('class="censured"', 'class="red"');
-        $( '#chat' ).html( data );
+        $('#chat').html(data);
         channelClassPath = 'div.channel-' + channelId;
-        $( channelClassPath ).attr(
+        $(channelClassPath).attr(
             'style', 'background-color:#333333 !important;'
         );
     }
     else {
         // TODO убрать?
-        DIV = document.createElement( 'DIV' );
+        DIV = document.createElement('DIV');
         DIV.innerHTML = data;
-        $( '#chat' ).html( $( 'div.channel-' + channelId, DIV) );
+        $('#chat').html($('div.channel-' + channelId, DIV));
 
 
-    if (autoScroll == 1) {
-        $("#chat").scrollTop(10000000);
+        if (autoScroll == 1) {
+            $("#chat").scrollTop(10000000);
+        }
     }
-   }
 }
 
-
+function FixSmileCode(str) {
+    for (i = 0; i < smilesCount; i++) {
+        var smilePattern = new RegExp(RegExp.escape(smiles[ i ].code), 'gi');
+        str = str.replace(smilePattern, ':s' + smiles[ i ].code);
+    }
+    return str;
+}
 // всевозможные замены
-function ProcessReplaces( messageInfo ) {
+function ProcessReplaces(messageInfo) {
     processReplacesMessageInfo = messageInfo;
     var message = messageInfo.message;
     // bb codes
-    message = bbCodeToHtml( message );
+
+    message = bbCodeToHtml(message);
+   // message = FixSmileCode(message);
 
     // смайлы
-    var smilesMode = $.cookie( 'chat-img' );
-    message = message.replace( /:s(:[-a-z0-9]{2,}:)/gi, function( match, code ) {
+    var smilesMode = $.cookie('chat-img');
+    message = message.replace(/:s(:[-a-z0-9]{2,}:)/gi, function (match, code) {
         var indexOfSmileWithThatCode = -1;
-        for ( var i = 0; i < smilesCount; i++ ) {
-            if ( smiles[ i ].code == code ) {
+        for (var i = 0; i < smilesCount; i++) {
+            if (smiles[ i ].code == code) {
                 indexOfSmileWithThatCode = i;
                 break;
             }
-        };
+        }
+        ;
 
         var replace = '';
-        if ( indexOfSmileWithThatCode != -1 ) {
-            switch( smilesMode ) {
+        if (indexOfSmileWithThatCode != -1) {
+            switch (smilesMode) {
                 // text code smiles
                 case '2':
                     replace = code;
@@ -264,10 +273,9 @@ function ProcessReplaces( messageInfo ) {
 }
 
 
-
-function BuildChat( dataForBuild ) {
+function BuildChat(dataForBuild) {
     userInfo.type = 'anon';
-    switch( userInfo.type ){
+    switch (userInfo.type) {
         case 'anon':
             myform = form_anon;
             break;
@@ -282,101 +290,99 @@ function BuildChat( dataForBuild ) {
             myform = form_chat;
     }
 
-    if ( userInfo.type === 'chatAdmin' && userInfo.roleIds.indexOf( 5 ) !== -1 ) {
+    if (userInfo.type === 'chatAdmin' && userInfo.roleIds.indexOf(5) !== -1) {
         isModerator = true;
     }
 
-    $('#dialog2').html('<div id="add_styles"></div><div class="chat-channel-name"></div><div id="chat"></div>'+myform);
+    $('#dialog2').html('<div id="add_styles"></div><div class="chat-channel-name"></div><div id="chat"></div>' + myform);
 
-    if ( top === self ) {
-        $( '#dialog2' ).css( 'background-color', '#000000' );
+    if (top === self) {
+        $('#dialog2').css('background-color', '#000000');
     }
 
     // chat window size
-    var chatWindowHeight = getParameterByName( 'height' );
+    var chatWindowHeight = getParameterByName('height');
 
-    if ( chatWindowHeight == undefined || chatWindowHeight == '' ) {
-        $('#dialog2').css( 'height', $(window).height() +'px' );
-        $('#chat').css( 'height', $(window).height() - 20 +'px' );
+    if (chatWindowHeight == undefined || chatWindowHeight == '') {
+        $('#dialog2').css('height', $(window).height() + 'px');
+        $('#chat').css('height', $(window).height()  - 20 + 'px');
     }
     else {
-        $('#dialog2').css( 'height', chatWindowHeight );
-        $('#chat').css( 'height', parseInt( chatWindowHeight ) - 65 + 'px' );
+        $('#dialog2').css('height', chatWindowHeight);
+        $('#chat').css('height', parseInt(chatWindowHeight) - 65 + 'px');
     }
 
-    var chatWindowWidth = getParameterByName( 'width' );
+    var chatWindowWidth = getParameterByName('width');
 
-    if ( chatWindowWidth == undefined || chatWindowWidth == '' ) {
-        $('#dialog2').css( 'width', '410px' );
-        $('#chat').css( 'width', '400px' );
-        $('.chat-text').css( 'width', '191px' );
+    if (chatWindowWidth == undefined || chatWindowWidth == '') {
+        $('#dialog2').css('width', '410px');
+        $('#chat').css('width', '400px');
+        $('.chat-text').css('width', '191px');
     }
     else {
-        $('#dialog2').css( 'width', chatWindowWidth );
-        $('#chat').css( 'width', parseInt( chatWindowWidth ) - 10 + 'px' );
-        $('.chat-text').css( 'width', parseInt( chatWindowWidth ) - 33 + 'px' );
+        $('#dialog2').css('width', chatWindowWidth);
+        $('#chat').css('width', parseInt(chatWindowWidth) - 10 + 'px');
+        $('.chat-text').css('width', parseInt(chatWindowWidth) - 33 + 'px');
     }
 
-    chatObj = document.getElementById( 'chat' );
+    chatObj = document.getElementById('chat');
 
-    $( '#chat' ).scroll( function(){
-        autoScroll = (chatObj.scrollHeight-chatObj.scrollTop<chatObj.clientHeight+500) ? 1:0;
+    $('#chat').scroll(function () {
+        autoScroll = (chatObj.scrollHeight - chatObj.scrollTop < chatObj.clientHeight + 500) ? 1 : 0;
     });
 
 
     StartChat();
 
 
-    $( '#chat-smile-panel > span').click( function(){
-        $( '#chat-smile-panel > div' ).hide();
+    $('#chat-smile-panel > span').click(function () {
+        $('#chat-smile-panel > div').hide();
         smilePanelTabNum = $(this).data('tabNumber');
-        $( '#chat-smile-panel > div#smile-panel-tab-' + smilePanelTabNum ).show();
-        $( '#chat-smile-panel > span').removeClass( 'active' );
-        $(this).addClass( 'active' );
+        $('#chat-smile-panel > div#smile-panel-tab-' + smilePanelTabNum).show();
+        $('#chat-smile-panel > span').removeClass('active');
+        $(this).addClass('active');
     });
 
     //toogle color nick btn
     //need refactoring
-    $( '#clr_nick_on').click( function(){
-        $.cookie( 'chat_color_nicks_off', '0', { expires: 365, path: '/'} );
+    $('#clr_nick_on').click(function () {
+        $.cookie('chat_color_nicks_off', '0', { expires: 365, path: '/'});
         $(this).hide();
-        $( '#clr_nick_off').show();
+        $('#clr_nick_off').show();
     });
 
-    $( '#clr_nick_off').click( function(){
-        $.cookie( 'chat_color_nicks_off', '1', { expires: 365, path: '/'} );
+    $('#clr_nick_off').click(function () {
+        $.cookie('chat_color_nicks_off', '1', { expires: 365, path: '/'});
         $(this).hide();
-        $( '#clr_nick_on').show();
+        $('#clr_nick_on').show();
     });
 }
 
 
-
-
 // сборка html для канала
-function BuildHtml( messageList ) {
+function BuildHtml(messageList) {
     var channelHTML = '';
     /*var messageToUserRegexp = new RegExp(
-        '\\[b\\]' + RegExp.escape( userInfo.name ) + '\\[/b\\],',
-        'gi'
-    );*/
+     '\\[b\\]' + RegExp.escape( userInfo.name ) + '\\[/b\\],',
+     'gi'
+     );*/
 
     var messageCount = messageList.length;
 
-    if ( messageCount == 0 ) {
+    if (messageCount == 0) {
         return '';
     }
 
-    var chatNoColorNicknames = $.cookie( 'chat_color_nicks_off') == '1';
+    var chatNoColorNicknames = $.cookie('chat_color_nicks_off') == '1';
 
-    for( i=0; i < messageCount; i++ ) {
+    for (i = 0; i < messageCount; i++) {
         var nicknameClass = 'nick';
         var color = '';
         var customColorStyle = '';
         var namePrefix = '';
 
         // сообщения пользователей и системы выглядят по-разному
-        switch( messageList[ i ].uid ) {
+        switch (messageList[ i ].uid) {
             // primetime bot
             case '-2':
                 nicknameClass = 'primetimebot-nick';
@@ -394,13 +400,13 @@ function BuildHtml( messageList ) {
                 var textClass = 'text';
 
                 // подсветка ников выключена
-                if ( chatNoColorNicknames ) {
+                if (chatNoColorNicknames) {
                     nicknameClass += ' user-2';
                 }
                 else {
-                    color = GetSpecColor( messageList[ i ].uid );
+                    color = GetSpecColor(messageList[ i ].uid);
                     // если не блат, то цвет по классу группы
-                    if ( color == '' ) {
+                    if (color == '') {
                         nicknameClass += ' role-' + messageList[ i ].role;
                     }
                     else {
@@ -408,7 +414,7 @@ function BuildHtml( messageList ) {
                     }
                 }
 
-                if ( messageList[ i ].roleIds.indexOf( 24 ) !== -1 ) {
+                if (messageList[ i ].roleIds.indexOf(24) !== -1) {
                     namePrefix = '<img src="/img/donate_01.png" width="12" height="11" class="top-supporter" />';
                 }
                 break;
@@ -419,21 +425,22 @@ function BuildHtml( messageList ) {
         // TODO убрать лишнее
 
         var userMenu = '';
-        if ( userInfo.rid != 8 ) {
+        if (userInfo.rid != 8) {
             userMenu = 'onClick="getmenu(this,' + messageList[ i ].id + ',' + messageList[ i ].uid + ', ' + channelId + ')" ';
         }
 
         // подсветка своих сообщений
 
-        var currentMessage = ProcessReplaces( messageList[ i ] );
+        var currentMessage = ProcessReplaces(messageList[ i ]);
 
         channelHTML = '<div class="channel-' + channelId + ' mess message_' + messageList[ i ].id + '">' + namePrefix + '<span' + customColorStyle + ' class="' + nicknameClass + '"' + userMenu + 'title="' + messageList[ i ].date + '">' + messageList[ i ].name + '</span><p class="' + textClass + '">' + currentMessage + '</p></div>' + channelHTML;
     }
 
     return channelHTML;
-}function GetSpecColor( uid ) {
+}
+function GetSpecColor(uid) {
     var color = '';
-    switch( uid ) {
+    switch (uid) {
         // Laylah
         case '20546':
         // Kitsune
@@ -467,6 +474,94 @@ function BuildHtml( messageList ) {
     }
     return color;
 }
+function otvet(nick) {
+    $('.chat-text').val('[b]' + nick + '[/b], ');
+    $('.chat-text').focus();
+    $('.menushka').remove();
+}
+
+
+function getmenu(nick, mid, uid, channelId) {
+
+    user_name = $(nick).html();
+
+    // do not show menu for system messages and prime time bot
+    if (uid == '-1' || uid == '-2') {
+        return false;
+    }
+    $('.menushka').remove();
+
+    rid = 4;
+    switch (rid) {
+        // root
+        case 3:
+        // админ
+        case 4:
+            $('body').append('<ul class="menushka" style="display:block;"><li onclick=otvet(user_name)>Ответить</li><li onclick="DeleteMessage( ' + mid + ', ' + channelId + ')">Удалить сообщение</li><li onclick="JumpToUserChannel(' + mid + ')">В канал к юзеру</li><li><a href="' + SC2TV_URL + '/messages/new/' + uid + '" target="_blank" onclick="$(\'.menushka\').remove();">Послать ЛС</a></li><li onclick="BanUser( ' + uid + ', user_name, 10, ' + mid + ', ' + channelId + ')">Молчать 10 мин.</li><li onclick="BanUser(' + uid + ', user_name, 1440, ' + mid + ', ' + channelId + ')">Молчать сутки</li><li onclick="BanUser( ' + uid + ', user_name, 4320, ' + mid + ', ' + channelId + ')">Молчать 3 дня</li><li onclick="ShowBanMenuForCitizen(' + uid + ',user_name,' + mid + ')">Забанить</li><li onclick="IgnoreUnignore(user_name, ' + uid + ' );">Ignore\Unignore</li><span class="menushka_close" onclick="$(\'.menushka\').remove();">X</span></ul>');
+        // модер
+        case 5:
+            $('body').append('<ul class="menushka" style="display:block;"><li onclick=otvet(user_name)>Ответить</li><li onclick="DeleteMessage( ' + mid + ', ' + channelId + ')">Удалить сообщение</li><li onclick="JumpToUserChannel(' + mid + ')">В канал к юзеру</li><li><a href="' + SC2TV_URL + '/messages/new/' + uid + '" target="_blank" onclick="$(\'.menushka\').remove();">Послать ЛС</a></li><li onclick="BanUser( ' + uid + ', user_name, 10, ' + mid + ', ' + channelId + ')">Молчать 10 мин.</li><li onclick="BanUser(' + uid + ', user_name, 1440, ' + mid + ', ' + channelId + ')">Молчать сутки</li><li onclick="BanUser( ' + uid + ', user_name, 4320, ' + mid + ', ' + channelId + ')">Молчать 3 дня</li><li onclick="ShowBanMenuForCitizen(' + uid + ',user_name,' + mid + ')">Забанить</li><span class="menushka_close" onclick="$(\'.menushka\').remove();">X</span></ul>');
+            break;
+
+        // юзер
+        case 2:
+        // журналист
+        case 6:
+        // редактор
+        case 7:
+        // стример
+        case 9:
+        // фанстример
+        case 10:
+        // real стример
+        case 14:
+        // хз кто
+        default:
+            $('body').append('<ul class="menushka" style="display:block;"><li onclick=otvet(user_name)>Ответить</li><li><a href="' + SC2TV_URL + '/messages/new/' + uid + '" target="_blank" onclick="$(\'.menushka\').remove();">Послать ЛС</a></li><li onclick="ShowBanMenuForCitizen(' + uid + ',user_name,' + mid + ')">Забанить</li><li onclick="IgnoreUnignore(user_name, ' + uid + ');">Ignore\Unignore</li><span class="menushka_close" onclick="$(\'.menushka\').remove();">X</span></ul>');
+    }
+}
+function AddUrlBBCode(message) {
+    var noUrlWithText = message.search(bbCodeURLWithTextPattern) == -1;
+
+    // add bb code only if it wasn't supplied by user
+    if (noUrlWithText) {
+        var noUrlWithoutText = message.search(bbCodeURLPattern) == -1;
+        if (noUrlWithoutText) {
+            // max length of DB field - length of bb code = 1024 - 11 = 1013
+            // but don't forget about html entities, so ~900
+            if (message.length < 900) {
+                message = message.replace(URLPattern, '[url]$&[/url]');
+            }
+        }
+    }
+
+    return message;
+}
+function ShowBanMenuForCitizen( uid, user_name, mid ) {
+    currentMenushaTop = $('.menushka').css( 'top' );
+    $('.menushka').css( 'top', 95 );
+    $('.menushka').html( '<li class="citizen-li" id="citizenBanReasonId-1">Мат</li><li class="citizen-li" id="citizenBanReasonId-5">Серьезные оскорбления</li><li class="citizen-li" id="citizenBanReasonId-6">Национализм, нацизм</li><li class="citizen-li" id="citizenBanReasonId-12">Порно, шок-контент, вирусы</li><li class="citizen-li" id="citizenBanReasonId-2">Завуалированный мат</li><li class="citizen-li" id="citizenBanReasonId-3">Угрозы жизни и здоровью</li><li class="citizen-li" id="citizenBanReasonId-4">Легкие оскорбления</li><li class="citizen-li" id="citizenBanReasonId-7">Реклама</li><li class="citizen-li" id="citizenBanReasonId-8">Спам</li><li class="citizen-li" id="citizenBanReasonId-9">Клевета</li><li class="citizen-li" id="citizenBanReasonId-11">Транслит, удаффщина, капсы</li><li class="citizen-li" id="citizenBanReasonId-13">Вредные флэшмобы</li><li class="citizen-li" id="citizenBanReasonId-14">Спойлер</li><span class="menushka_close">X</span>');
+
+    $( '.citizen-li' ).bind('click', function(){
+        reasonId = $(this).attr( 'id' );
+        reasonId = reasonId.replace( 'citizenBanReasonId-', '' );
+        VoteForUserBan( uid, user_name, mid, reasonId );
+    } );
+
+    $( '.menushka_close' ).bind('click', function(){
+        $('.menushka').remove();
+    } );
+}
+function VoteForUserBan( uid, user_name, mid, reasonId ) {
+    $.ajaxSetup({ async: false });
+    $.post( '/api/chat/ban', {banUserId: uid, userName: user_name, messageId: mid, reasonId: reasonId}, function( data ) {
+        data = $.parseJSON( data );
+        $('.menushka').html( data.result );
+    });
+    $.ajaxSetup({ async: true });
+
+    $('.menushka').fadeOut( 10000 );
+}
 
 var QueryString = function () {
     // This function is anonymous, is executed immediately and
@@ -474,7 +569,7 @@ var QueryString = function () {
     var query_string = {};
     var query = window.location.search.substring(1);
     var vars = query.split("&");
-    for (var i=0;i<vars.length;i++) {
+    for (var i = 0; i < vars.length; i++) {
         var pair = vars[i].split("=");
         // If first entry with this name
         if (typeof query_string[pair[0]] === "undefined") {
@@ -489,4 +584,4 @@ var QueryString = function () {
         }
     }
     return query_string;
-} ();
+}();

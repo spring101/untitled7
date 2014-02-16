@@ -3,27 +3,51 @@ package com.sc2tv.spring.tx.service.IOService.ActionService.Factory.Impl;
 
 import com.sc2tv.spring.tx.service.IOService.ActionService.Factory.FunctionFactory;
 import com.sc2tv.spring.tx.service.IOService.ActionService.Functions.ExecutableFunction;
-import com.sc2tv.spring.tx.service.IOService.ActionService.Functions.Functions;
-import com.sc2tv.spring.tx.service.IOService.ActionService.Param;
-import com.sc2tv.spring.tx.service.IOService.ActionService.Validator;
+import com.sc2tv.spring.tx.service.IOService.ActionService.Functions.Impl.ScanChat;
+import com.sc2tv.spring.tx.service.IOService.ActionService.Functions.Impl.VoteRedChat;
+import com.sc2tv.spring.tx.service.IOService.ActionService.Functions.Impl.VoteStreamer;
+import com.sc2tv.spring.tx.service.IOService.ActionService.Functions.Impl.WriteInChat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Map;
 
 @Service
 public class FunctionFactoryImpl implements FunctionFactory {
     @Autowired
-    Validator validator;
+    WriteInChat writeInChat;
     @Autowired
-    Functions functions;
-    @Override
-    public String execute(String functionName, Map<Param, Object> params) throws InstantiationException, IllegalAccessException {
-        return functions.functionMap.get(functionName).execute(params);
-    }
+    VoteRedChat voteRedChat;
+    @Autowired
+    VoteStreamer voteStreamer;
+    @Autowired
+    ScanChat scanChat;
 
     @Override
     public ExecutableFunction FUNCTION(String functionName) {
-        return functions.functionMap.get(functionName);
+        switch (functionName) {
+            case ("write"): {
+                return writeInChat;
+            }
+            case ("vote"): {
+                return voteStreamer;
+            }
+            case ("scan"):
+                return scanChat;
+
+            case ("redchat"): {
+                return voteRedChat;
+            }
+        }
+        return null;
     }
+   /* @Override
+    public ExecutableFunction FUNCTION(String functionName) {
+        try {
+            return functions.functionMap.get(functionName).getClass().newInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }*/
 }

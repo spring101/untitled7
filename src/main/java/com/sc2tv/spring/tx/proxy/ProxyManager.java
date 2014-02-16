@@ -7,11 +7,15 @@ import java.util.List;
 
 public interface ProxyManager {
     ProxyUnit insertProxyUnit(ProxyUnit proxyUnit);
-    ProxyUnit getProxyUnitById(int i);
+
+    ProxyUnit insertProxyUnit(String proxy);
+
     int getCount();
+
     List<ProxyUnit> getProxyInRange(int begin, int end);
 
-    ProxyUnit getProxyUnit(String host, int port);
+    ProxyUnit getProxyUnit(String host);
+
     List<ProxyUnit> getProxyUnitList();
 
     List<ProxyUnit> getAvaliableProxies();

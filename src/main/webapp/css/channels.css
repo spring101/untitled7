@@ -1,8 +1,9 @@
-body{
+body {
     margin: 0;
     width: 100%;
 }
-div.col{
+
+div.col {
     border: solid 1px #aa9974;
     background-color: #b5cbcc;
     width: 520px;

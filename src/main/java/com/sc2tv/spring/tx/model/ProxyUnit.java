@@ -1,53 +1,36 @@
 package com.sc2tv.spring.tx.model;
 
-import org.apache.commons.httpclient.ProxyClient;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpHost;
 import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
 import javax.persistence.*;
 import java.io.IOException;
 import java.io.Serializable;
-import org.apache.http.Header;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpHost;
-import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
-import org.apache.regexp.recompile;
+import java.net.InetAddress;
 
 @Entity
-@Table(name="PROXYUNIT", uniqueConstraints=
-@UniqueConstraint(columnNames = {"host", "port"}) )
-public class ProxyUnit implements Serializable{
+@Table(name = "PROXY", uniqueConstraints =
+@UniqueConstraint(columnNames = {"host"}))
+public class ProxyUnit implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    public ProxyUnit(String host, int port, int version) {
+    public ProxyUnit(String host, int usages) {
         this.host = host;
-        this.port = port;
-        this.version = version;
+        this.usages = usages;
     }
+
     @Id
-    @Column(name="id")
+    @Column(name = "host")
     @GeneratedValue
-    private int id ;
     String host;
-    int port;
-    private int version;
+    int usages;
 
-    public void setVersion(int version) {
-        this.version = version;
-    }
-
-
-    public Integer getId() {
-        return id;
-    }
-
-    @Column(name="host")
     public String getHost() {
         return host;
     }
@@ -56,87 +39,62 @@ public class ProxyUnit implements Serializable{
         this.host = host;
     }
 
-    @Column(name="port")
-    public int getPort() {
-        return port;
-    }
-    @Version
-    @Column(name="VERSION")
-    public int getVersion() {
-        return version;
-    }
-
-    @Override
-    public String toString() {
-        return "ProxyUnit{" +
-                "id=" + id +
-                ", host='" + host + '\'' +
-                ", port=" + port +
-                ", version=" + version +
-                '}';
-    }
-    public int checkProxy() {
-        ProxyClient client = new ProxyClient();
-
-        boolean error=false;
-        CloseableHttpClient httpclient = HttpClients.createDefault();
-
+    public boolean checkProxyReachable() {
+        boolean connectionStatus = false;
         try {
-            HttpHost target = new HttpHost("issues.apache.org", 443, "https");
-            HttpHost proxy = new HttpHost(host, port, "http");
+            InetAddress addr = InetAddress.getByName(getHost().split(":")[0]);//here type proxy server ip
+            connectionStatus = addr.isReachable(3000); // 1 second time for response
+        } catch (Exception e) {
+        }
 
+        return connectionStatus;
+
+    }
+
+    public boolean checkProxy(String targetHost) {
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        try {
+            HttpHost target = new HttpHost(targetHost);
+            HttpHost proxy = new HttpHost(host.split(":")[0], Integer.parseInt(host.split(":")[1]));
             RequestConfig config = RequestConfig.custom().setProxy(proxy).build();
             HttpGet request = new HttpGet("/");
             request.setConfig(config);
-            CloseableHttpResponse response = httpclient.execute(target, request);
+            CloseableHttpResponse response = null;
+            try{
+              response = httpclient.execute(target, request);
+            }
+            catch (Exception exp){
+            }
             try {
                 HttpEntity entity = response.getEntity();
             } finally {
                 response.close();
             }
         } catch (ClientProtocolException e) {
-            error = true;
+            return false;
         } catch (IOException e) {
-            error = true;
+            return false;
         } finally {
             try {
                 httpclient.close();
             } catch (IOException e) {
             }
         }
-        if(!error){
-           // System.out.println("Coutched! "+ host);
-            return 1;
-        }
-        else
-            return 0;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setPort(int port) {
-        this.port = port;
+        return true;
     }
 
 
-    public void setPort(Integer port) {
-        this.port = port;
-    }
-
-    public ProxyUnit(String host, Integer port) {
+    public ProxyUnit(String host, Integer usages) {
         this.host = host;
-        this.port = port;
+        this.usages = usages;
     }
 
     public ProxyUnit() {
 
     }
+
     public ProxyUnit(String proxy) {
-        try{
-        this.host = proxy.split(":")[0];
-        this.port = Integer.parseInt(proxy.split(":")[1]);
-        }
-        catch(Exception exp){};
+        this.host = proxy;
+        this.usages = 0;
     }
 }

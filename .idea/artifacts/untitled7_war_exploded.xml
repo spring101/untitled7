@@ -2,10 +2,10 @@
   <artifact type="exploded-war" build-on-make="true" name="untitled7:war exploded">
     <output-path>$PROJECT_DIR$/target/untitled8</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="untitled7/web/Web" />
+      <element id="javaee-facet-resources" facet="sc2tv/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="untitled7" />
+          <element id="module-output" name="sc2tv" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework:spring-core:3.2.0.RELEASE" />

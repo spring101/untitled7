@@ -1,23 +1,19 @@
 package com.sc2tv.spring.tx.model;
-import org.apache.commons.codec.digest.DigestUtils;
-import javax.persistence.*;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(name="SC2TVUSER")
-public class Sc2TvUser
-{
+@Table(name = "SC2TVUSER")
+public class Sc2TvUser {
     @Id
-    @Column(name="USERNAME", nullable = false)
+    @Column(name = "USERNAME", nullable = false)
     private String username;
-    @Column(name="PASSWORD")
+    @Column(name = "PASSWORD")
     private String password;
-    @Column(name="EMAIL", nullable = false)
+    @Column(name = "EMAIL", nullable = false)
     private String email;
 
     public String getEmailPass() {
@@ -28,7 +24,7 @@ public class Sc2TvUser
         this.emailPass = emailPass;
     }
 
-    @Column(name="EMAILPASS", nullable = false)
+    @Column(name = "EMAILPASS", nullable = false)
     private String emailPass;
 
     public String getProxy() {
@@ -39,17 +35,18 @@ public class Sc2TvUser
         this.proxy = proxy;
     }
 
-    @Column(name="PROXY")
+    @Column(name = "PROXY")
     private String proxy;
+
     public Sc2TvUser() {
 
     }
 
-    public Sc2TvUser(String email)
-    {
+    public Sc2TvUser(String email) {
         username = email.substring(0, email.indexOf("@"));
         this.email = email;
     }
+
     public Sc2TvUser(String username, String password, String email, String emailPass, String proxy) {
         this.username = username;
         this.password = password;
@@ -57,6 +54,7 @@ public class Sc2TvUser
         this.proxy = proxy;
         this.emailPass = emailPass;
     }
+
     public Sc2TvUser(Sc2TvUser sc2TvUser) {
         this.username = sc2TvUser.getUsername();
         this.password = sc2TvUser.getPassword();
@@ -65,13 +63,11 @@ public class Sc2TvUser
         this.emailPass = sc2TvUser.getEmailPass();
     }
 
-    public String checkPassword(String email)
-    {
+    public String checkPassword(String email) {
         return null;
     }
 
-    private String kaptchaToStrign()
-    {
+    private String kaptchaToStrign() {
         return "";
     }
 
